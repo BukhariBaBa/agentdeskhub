@@ -686,15 +686,13 @@ function DashboardView({ app }) {
         React.createElement(
           Card,
           { pad: "4px 16px" },
-          activity
-            .slice(0, 7)
-            .map((a, i, arr) =>
-              React.createElement(ActivityRow, {
-                key: a.id,
-                a,
-                last: i === arr.length - 1,
-              }),
-            ),
+          activity.slice(0, 7).map((a, i, arr) =>
+            React.createElement(ActivityRow, {
+              key: a.id,
+              a,
+              last: i === arr.length - 1,
+            }),
+          ),
         ),
       ),
     ),
