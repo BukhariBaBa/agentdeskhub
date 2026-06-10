@@ -1,4 +1,5 @@
 # AgentDesk — Client Portal PRD
+
 **Version 1.0 | URL: agentdeskhub.com/client/[token]**
 
 ---
@@ -28,22 +29,22 @@ Visibility: Client sees only their own data
 
 ## 3. What Clients Can Do
 
-| Action | Allowed |
-|---|---|
-| View proposals | ✅ |
-| Accept a proposal tier | ✅ |
-| Request proposal changes | ✅ |
-| View project milestones | ✅ Read-only |
-| View deliverable files | ✅ Download |
-| View invoices | ✅ |
-| Pay invoice (external link) | ✅ |
-| Download invoice PDF | ✅ |
-| Send message to freelancer | ✅ |
-| Submit testimonial | ✅ (after payment) |
-| Edit any data | ❌ |
-| See agent names or runs | ❌ |
-| See token counts or models | ❌ |
-| See other clients' data | ❌ |
+| Action                      | Allowed            |
+| --------------------------- | ------------------ |
+| View proposals              | ✅                 |
+| Accept a proposal tier      | ✅                 |
+| Request proposal changes    | ✅                 |
+| View project milestones     | ✅ Read-only       |
+| View deliverable files      | ✅ Download        |
+| View invoices               | ✅                 |
+| Pay invoice (external link) | ✅                 |
+| Download invoice PDF        | ✅                 |
+| Send message to freelancer  | ✅                 |
+| Submit testimonial          | ✅ (after payment) |
+| Edit any data               | ❌                 |
+| See agent names or runs     | ❌                 |
+| See token counts or models  | ❌                 |
+| See other clients' data     | ❌                 |
 
 ---
 
@@ -73,21 +74,25 @@ Clean minimal top bar. No sidebar. No navigation beyond the 4 tabs.
 ### 5.2 Overview Tab
 
 **Active project card:**
+
 - Project name
 - Progress bar (milestones complete / total)
 - Deadline countdown ("12 days remaining")
 
 **Latest invoice summary:**
+
 - Amount, due date, status badge
 - [Pay Now →] button (if pay link is set and invoice is unpaid)
 
 **Recent activity timeline (last 5 events):**
+
 - "Milestone 2 marked complete — June 1"
 - "Invoice #004 sent — May 28"
 - "Proposal accepted — May 15"
 - "Project started — May 12"
 
 **Message box:**
+
 - "Send a message to [Freelancer Name]"
 - Textarea + [Send Message] button
 - On submit → creates notification in freelancer's dashboard
@@ -98,10 +103,12 @@ Clean minimal top bar. No sidebar. No navigation beyond the 4 tabs.
 ### 5.3 Proposals Tab
 
 **Proposal list:**
+
 - Title | Amount | Date sent | Status badge
 - Click to open proposal detail
 
 **Proposal detail:**
+
 - Three tier cards side by side: Basic / Standard / Premium
 - Each card: scope summary, price, delivery timeline, inclusions list
 - **Pending proposals:** [Accept this proposal ✓] (emerald) | [Request Changes] (secondary)
@@ -111,6 +118,7 @@ Clean minimal top bar. No sidebar. No navigation beyond the 4 tabs.
 - **Rejected/expired:** greyed out with status label
 
 **Status badges:**
+
 - Draft (zinc) — not visible to client
 - Sent (indigo)
 - Accepted (emerald)
@@ -122,9 +130,11 @@ Clean minimal top bar. No sidebar. No navigation beyond the 4 tabs.
 ### 5.4 Projects Tab
 
 **Active project details:**
+
 - Name, description, start date, deadline
 
 **Milestone timeline (vertical):**
+
 ```
 ✅ Discovery & wireframes — Completed May 10
 🔄 Frontend development  — In Progress
@@ -133,6 +143,7 @@ Clean minimal top bar. No sidebar. No navigation beyond the 4 tabs.
 ```
 
 **Deliverables section:**
+
 - Files uploaded by freelancer
 - File name | Upload date | [Download] button
 - Only files marked "visible to client" appear here
@@ -144,9 +155,11 @@ Clean minimal top bar. No sidebar. No navigation beyond the 4 tabs.
 ### 5.5 Invoices Tab
 
 **Invoice list:**
+
 - Invoice # | Description | Amount | Due date | Status badge
 
 **Invoice detail view:**
+
 - From / To header block
 - Line items table: Description | Qty | Rate | Total
 - Subtotal | Tax | Total (bold, larger)
@@ -159,12 +172,14 @@ Clean minimal top bar. No sidebar. No navigation beyond the 4 tabs.
 
 **After payment confirmed (invoice marked paid by freelancer):**
 Simple testimonial form appears:
+
 ```
 How was working with [Freelancer Name]?
 ★ ★ ★ ★ ★  (star rating)
 [Share your experience (optional)]
 [Submit]
 ```
+
 Submitted testimonials saved to workspace. Shown in Settings → Social Proof section.
 
 ---
@@ -195,6 +210,7 @@ Preview link: [Open Portal Preview →]
 ```
 
 Per-client control in Clients table:
+
 - Lock/unlock icon in Portal column
 - Toggle portal on/off per individual client
 
@@ -227,14 +243,14 @@ submitted_at         timestamptz
 
 ## 9. Build Timeline
 
-| Week | What ships |
-|---|---|
-| Week 6 | Portal skeleton: Overview + Projects tabs |
-| Week 7 | Proposals tab (3-tier acceptance) + Invoices tab |
-| Week 7 | Testimonial form after payment |
-| Week 8 | Portal settings (per-client toggle, custom message) |
-| Week 9 | Mobile polish pass |
-| Week 10 | Deliverables file upload + download |
+| Week    | What ships                                          |
+| ------- | --------------------------------------------------- |
+| Week 6  | Portal skeleton: Overview + Projects tabs           |
+| Week 7  | Proposals tab (3-tier acceptance) + Invoices tab    |
+| Week 7  | Testimonial form after payment                      |
+| Week 8  | Portal settings (per-client toggle, custom message) |
+| Week 9  | Mobile polish pass                                  |
+| Week 10 | Deliverables file upload + download                 |
 
 ---
 
@@ -254,10 +270,10 @@ submitted_at         timestamptz
 
 When client takes action in portal, freelancer gets notified:
 
-| Client action | Notification |
-|---|---|
-| Accepts proposal | Bell notification + email "Acme Corp accepted your proposal" |
-| Requests changes | Bell notification + message in Client Comms queue |
-| Sends message | Bell notification + message in Project → Client Messages |
-| Pays invoice | Bell notification + triggers post-project automation sequence |
-| Submits testimonial | Bell notification + saved to Social Proof |
+| Client action       | Notification                                                  |
+| ------------------- | ------------------------------------------------------------- |
+| Accepts proposal    | Bell notification + email "Acme Corp accepted your proposal"  |
+| Requests changes    | Bell notification + message in Client Comms queue             |
+| Sends message       | Bell notification + message in Project → Client Messages      |
+| Pays invoice        | Bell notification + triggers post-project automation sequence |
+| Submits testimonial | Bell notification + saved to Social Proof                     |

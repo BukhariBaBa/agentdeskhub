@@ -53,14 +53,14 @@ agentdesk/
 
 Each agent lives in `/lib/agents/<name>.ts` and exports a typed `agentConfig`:
 
-| Agent | File | Tint | Output type |
-|---|---|---|---|
-| Lead Scout | `lead-scout.ts` | indigo | `LeadScoringOutput` |
-| Proposal Agent | `proposal.ts` | indigo | `ProposalOutput` |
+| Agent           | File                 | Tint    | Output type         |
+| --------------- | -------------------- | ------- | ------------------- |
+| Lead Scout      | `lead-scout.ts`      | indigo  | `LeadScoringOutput` |
+| Proposal Agent  | `proposal.ts`        | indigo  | `ProposalOutput`    |
 | Project Manager | `project-manager.ts` | emerald | `ProjectPlanOutput` |
-| Finance Agent | `finance.ts` | emerald | `InvoiceOutput` |
-| Client Comms | `client-comms.ts` | amber | `CommsOutput` |
-| Content & Brand | `content-brand.ts` | amber | `ContentOutput` |
+| Finance Agent   | `finance.ts`         | emerald | `InvoiceOutput`     |
+| Client Comms    | `client-comms.ts`    | amber   | `CommsOutput`       |
+| Content & Brand | `content-brand.ts`   | amber   | `ContentOutput`     |
 
 Agent state machine: `pending → running → awaiting_approval → done | failed`
 
@@ -82,12 +82,12 @@ Use prompt caching headers on all system prompts.
 
 ## Pricing Tiers
 
-| Plan | Price | Runs/mo |
-|---|---|---|
-| Trial | Free | 15 |
-| Starter | $19 | 30 |
-| Pro | $39 | 100 |
-| Agency | $79 | 300 |
+| Plan    | Price | Runs/mo |
+| ------- | ----- | ------- |
+| Trial   | Free  | 15      |
+| Starter | $19   | 30      |
+| Pro     | $39   | 100     |
+| Agency  | $79   | 300     |
 
 Top-up: $2 / 10 runs. Payments via LemonSqueezy webhooks.
 
@@ -186,6 +186,7 @@ components/
 ```
 
 Rules:
+
 - **Types/interfaces** → always in `<ComponentName>.types.ts`, never inside the component file
 - **Constants** → always in `<ComponentName>.const.ts`, never inside the component file
 - Component files contain **JSX/render code only**
@@ -216,6 +217,7 @@ components/
 ```
 
 Examples of what belongs in `common/`:
+
 - `StatusBadge` — used on clients, proposals, projects, invoices
 - `EmptyState` — every list page has one
 - `PageHeader` — title + subtitle + action button pattern
@@ -265,24 +267,26 @@ function ClientsView() {
 All data access goes through two layers:
 
 **Services** (`/services/<domain>.ts`) — raw tRPC/fetch calls, no React, no hooks:
+
 ```ts
 // services/clients.ts
 export const clientsService = {
   getAll: () => trpc.clients.getAll.query(),
   create: (input: CreateClientInput) => trpc.clients.create.mutate(input),
-}
+};
 ```
 
 **Hooks** (`/hooks/use<Domain>.ts`) — React wrapper, handles loading/error state:
+
 ```ts
 // hooks/useClients.ts
 export function useClients() {
-  const query = trpc.clients.getAll.useQuery()
+  const query = trpc.clients.getAll.useQuery();
   return {
     clients: query.data ?? [],
     isLoading: query.isLoading,
     error: query.error,
-  }
+  };
 }
 ```
 
@@ -306,6 +310,7 @@ Never leave a task in a state where formatting or lint errors exist. If `eslint 
 ## Definition of Done
 
 A feature is complete when:
+
 - [ ] Works on production (Vercel preview URL), not just locally
 - [ ] Error state, loading state, and empty state all handled
 - [ ] RLS policies verified — one workspace cannot read another's data

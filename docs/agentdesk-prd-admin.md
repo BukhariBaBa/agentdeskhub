@@ -1,4 +1,5 @@
 # AgentDesk — Super Admin Panel PRD
+
 **Version 1.0 | URL: agentdeskhub.com/admin**
 
 ---
@@ -79,23 +80,24 @@ Style: Dense, data-table focused. Think Stripe dashboard or Vercel admin. No age
 
 **Top row — key metrics:**
 
-| Card | Value | Sub-text |
-|---|---|---|
-| Total Workspaces | Count | +N this month |
-| Active Users | Count | Paying only |
-| MRR | $X,XXX | +N% vs last month |
-| Total Revenue | $XX,XXX | All time |
+| Card             | Value   | Sub-text          |
+| ---------------- | ------- | ----------------- |
+| Total Workspaces | Count   | +N this month     |
+| Active Users     | Count   | Paying only       |
+| MRR              | $X,XXX  | +N% vs last month |
+| Total Revenue    | $XX,XXX | All time          |
 
 **Second row — operational metrics:**
 
-| Card | Value |
-|---|---|
-| Runs This Month | Total agent runs across all workspaces |
-| Trial Workspaces | Currently in 14-day trial |
-| Churned This Month | Cancelled subscriptions |
-| Failed Runs | Agent runs with status=failed (last 7 days) |
+| Card               | Value                                       |
+| ------------------ | ------------------------------------------- |
+| Runs This Month    | Total agent runs across all workspaces      |
+| Trial Workspaces   | Currently in 14-day trial                   |
+| Churned This Month | Cancelled subscriptions                     |
+| Failed Runs        | Agent runs with status=failed (last 7 days) |
 
 **Charts:**
+
 - New signups bar chart (last 30 days, daily)
 - Revenue trend line chart (last 12 months, monthly MRR)
 
@@ -106,23 +108,27 @@ Style: Dense, data-table focused. Think Stripe dashboard or Vercel admin. No age
 **Filters:** Plan (all/trial/starter/pro/agency) | Status (all/active/trial/cancelled/suspended) | Date joined (range) | Search (workspace name, owner email)
 
 **Table columns:**
+
 ```
 Workspace | Owner Email | Plan | Runs Used | Joined | Status | Actions
 ```
 
 **Status badges:**
+
 - Active (emerald)
 - Trial (amber) + days remaining
 - Cancelled (zinc)
 - Suspended (rose)
 
 **Actions per row:**
+
 - View → opens workspace detail drawer
 - Edit Plan → modal to change plan/runs
 - Suspend → disables all agent runs immediately
 - Notes → add internal admin note
 
 **Workspace detail drawer (full right panel):**
+
 - Owner: name, email, joined date, last active
 - Current plan, trial end date, runs used this billing cycle
 - All agent runs: table with status, agent type, timestamp
@@ -137,17 +143,20 @@ Workspace | Owner Email | Plan | Runs Used | Joined | Status | Actions
 **Source:** LemonSqueezy webhook data synced to DB.
 
 **Table columns:**
+
 ```
 Workspace | Owner Email | Plan | Amount | Next Billing | Status | Actions
 ```
 
 **Status badges:**
+
 - Active (emerald)
 - Past due (amber)
 - Cancelled (zinc)
 - Paused (indigo)
 
 **Actions:**
+
 - Override modal: manually change plan tier + update runs_limit in DB
 - Cancel subscription (with confirmation)
 - View LemonSqueezy record (external link)
@@ -163,6 +172,7 @@ View and edit the three plan configurations.
 **Three plan cards (Starter / Pro / Agency):**
 
 Each card shows and allows editing:
+
 ```
 Plan name
 Price ($/mo)
@@ -192,11 +202,13 @@ Description:    [text, internal note]
 ```
 
 **Discount table:**
+
 ```
 Code | Type | Amount | Used / Limit | Plans | Expiry | Status | Actions
 ```
 
 **Status badges:**
+
 - Active (emerald)
 - Expired (zinc)
 - Exhausted (amber — usage limit reached)
@@ -204,6 +216,7 @@ Code | Type | Amount | Used / Limit | Plans | Expiry | Status | Actions
 **Actions:** View usage details | Deactivate | Delete
 
 **Usage details modal:**
+
 - Table of all workspaces that used this code
 - Workspace name, owner email, date applied, amount saved
 
@@ -216,23 +229,28 @@ Code | Type | Amount | Used / Limit | Plans | Expiry | Status | Actions
 **Filters:** Date range picker | Plan filter | Status filter (all/paid/failed/refunded)
 
 **Revenue chart at top:**
+
 - Monthly bar chart showing revenue for filtered period
 
 **Table columns:**
+
 ```
 Date | Workspace | Owner Email | Plan | Amount | Status | LemonSqueezy ID
 ```
 
 **Status badges:**
+
 - Paid (emerald)
 - Failed (rose)
 - Refunded (amber)
 - Pending (zinc)
 
 **Table footer:**
+
 - "Showing X transactions | Total: $X,XXX.XX" for filtered range
 
 **[Export CSV] button:**
+
 - Downloads filtered transactions as CSV
 - Columns: date, workspace, email, plan, amount, status, ls_id
 
@@ -243,20 +261,24 @@ Date | Workspace | Owner Email | Plan | Amount | Status | LemonSqueezy ID
 **Filters:** Agent type | Status | Workspace (search) | Date range
 
 **Table columns:**
+
 ```
 Timestamp | Workspace | Agent Type | Status | Tokens | Model | Duration | Actions
 ```
 
 **Status badges:**
+
 - Done (emerald)
 - Failed (rose)
 - Pending (amber)
 - Running (indigo)
 
 **Actions:**
+
 - View → opens run detail modal
 
 **Run detail modal:**
+
 - Workspace, agent type, status, timestamps
 - Input payload (formatted JSON, collapsible)
 - Output payload (formatted JSON, collapsible)
@@ -264,6 +286,7 @@ Timestamp | Workspace | Agent Type | Status | Tokens | Model | Duration | Action
 - Model used, tokens consumed, latency
 
 **Use cases for this screen:**
+
 - Debug failed agent runs for users who report issues
 - Monitor for systemic failures (many fails = API issue)
 - Billing audit (verify token counts)
@@ -288,6 +311,7 @@ Preview:    [shows how it looks in freelancer bell icon]
 On send → creates notification records for all matching workspaces with `type = announcement`.
 
 **Announcements table:**
+
 ```
 Date | Target | Title | Message preview | Sent to | Actions
 ```
@@ -295,6 +319,7 @@ Date | Target | Title | Message preview | Sent to | Actions
 **Actions:** View | Delete (removes from all user inboxes)
 
 **Use cases:**
+
 - "We've launched a new feature — check it out!"
 - "Scheduled maintenance on Sunday 2–4am UTC"
 - "Trial users: upgrade before your trial ends for 20% off"
@@ -303,20 +328,21 @@ Date | Target | Title | Message preview | Sent to | Actions
 
 ## 6. Build Timeline
 
-| Week | What ships |
-|---|---|
-| Week 5 | Admin auth + login page |
-| Week 5 | Basic Workspaces list (read-only) |
-| Week 5 | Basic Payments view |
-| Week 7 | Subscriptions screen + plan override |
-| Week 8 | Discounts creation + management |
-| Week 9 | Packages editing screen |
-| Week 10 | Overview dashboard with charts |
-| Week 10 | Agent Runs Log |
-| Week 11 | Announcements screen |
-| Week 12 | Export CSV, audit log, admin roles |
+| Week    | What ships                           |
+| ------- | ------------------------------------ |
+| Week 5  | Admin auth + login page              |
+| Week 5  | Basic Workspaces list (read-only)    |
+| Week 5  | Basic Payments view                  |
+| Week 7  | Subscriptions screen + plan override |
+| Week 8  | Discounts creation + management      |
+| Week 9  | Packages editing screen              |
+| Week 10 | Overview dashboard with charts       |
+| Week 10 | Agent Runs Log                       |
+| Week 11 | Announcements screen                 |
+| Week 12 | Export CSV, audit log, admin roles   |
 
 **At launch (week 5), you only need:**
+
 - See who signed up (Workspaces)
 - See what they paid (Payments)
 - Change someone's plan manually (Subscriptions override)
@@ -328,6 +354,7 @@ Everything else can wait until you have users to manage.
 ## 7. Key Developer Rules
 
 ### Authentication
+
 - Admin routes must use a **separate auth middleware** from the freelancer auth
 - Admin sessions stored in a different cookie (`agentdesk_admin_session`)
 - Failed admin login attempts: rate-limit after 5 attempts (15-minute lockout)
@@ -335,14 +362,16 @@ Everything else can wait until you have users to manage.
 
 ### Authorization Roles
 
-| Role | Access |
-|---|---|
-| `superadmin` | Full access, can create other admin users |
-| `support` | Read all + edit workspaces/subscriptions, cannot touch admin users or packages |
-| `readonly` | Read-only access to all screens |
+| Role         | Access                                                                         |
+| ------------ | ------------------------------------------------------------------------------ |
+| `superadmin` | Full access, can create other admin users                                      |
+| `support`    | Read all + edit workspaces/subscriptions, cannot touch admin users or packages |
+| `readonly`   | Read-only access to all screens                                                |
 
 ### Audit Logging
+
 Every write action in admin panel must log to `admin_audit_log`:
+
 - Who did it (admin_id)
 - What they did (action string)
 - What they did it to (target_type + target_id)
@@ -350,6 +379,7 @@ Every write action in admin panel must log to `admin_audit_log`:
 - IP address
 
 ### Data Safety
+
 - Soft-delete only: never hard-delete workspace data from admin panel
 - Suspension means `status = suspended` — data preserved
 - "Delete account" requires typing workspace name to confirm
@@ -357,6 +387,7 @@ Every write action in admin panel must log to `admin_audit_log`:
 - Never log or expose full tokens, access tokens, or payment details in audit log
 
 ### Route Structure
+
 ```
 /admin                    → redirect to /admin/overview
 /admin/login              → admin login page
@@ -387,11 +418,11 @@ All routes except `/admin/login` protected by `adminAuthMiddleware`.
 
 ## 9. Future Admin Features (Post-Launch)
 
-| Feature | When |
-|---|---|
-| Revenue cohort analysis | Month 4+ |
-| Churn reason tracking | Month 4+ |
-| User impersonation (for support) | Month 6+ |
-| A/B test management | Month 6+ |
+| Feature                               | When     |
+| ------------------------------------- | -------- |
+| Revenue cohort analysis               | Month 4+ |
+| Churn reason tracking                 | Month 4+ |
+| User impersonation (for support)      | Month 6+ |
+| A/B test management                   | Month 6+ |
 | Automated churn intervention triggers | Month 6+ |
-| API usage cost by workspace | Month 3+ |
+| API usage cost by workspace           | Month 3+ |

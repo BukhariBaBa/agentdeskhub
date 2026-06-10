@@ -1,49 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgentDesk — Your AI-powered freelance OS</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;550;600;650;680;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="tokens.css" />
-</head>
-<body>
-  <div id="root"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgentDesk — Your AI-powered freelance OS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;550;600;650;680;700&family=Geist+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="tokens.css" />
+  </head>
+  <body>
+    <div id="root"></div>
 
-  <template id="__bundler_thumbnail" data-bg-color="#4F46E5">
-    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-      <rect width="1200" height="800" fill="#4F46E5"/>
-      <g transform="translate(600 360)" fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-150 150 V-30 L0 -135 L150 -30 V150"/>
-      </g>
-      <circle cx="600" cy="360" r="40" fill="#ffffff"/>
-      <text x="600" y="600" font-family="Geist, sans-serif" font-size="64" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="-2">AgentDesk</text>
-    </svg>
-  </template>
+    <template id="__bundler_thumbnail" data-bg-color="#4F46E5">
+      <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1200" height="800" fill="#4F46E5" />
+        <g
+          transform="translate(600 360)"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="22"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M-150 150 V-30 L0 -135 L150 -30 V150" />
+        </g>
+        <circle cx="600" cy="360" r="40" fill="#ffffff" />
+        <text
+          x="600"
+          y="600"
+          font-family="Geist, sans-serif"
+          font-size="64"
+          font-weight="700"
+          fill="#ffffff"
+          text-anchor="middle"
+          letter-spacing="-2"
+        >
+          AgentDesk
+        </text>
+      </svg>
+    </template>
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+    <script
+      src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+      integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+      integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+      integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+      crossorigin="anonymous"
+    ></script>
 
-  <script type="text/babel" src="icons.jsx"></script>
-  <script type="text/babel" src="data.jsx"></script>
-  <script type="text/babel" src="primitives.jsx"></script>
-  <script type="text/babel" src="aiprofile.jsx"></script>
-  <script type="text/babel" src="docrenderers.jsx"></script>
-  <script type="text/babel" src="dashboard.jsx"></script>
-  <script type="text/babel" src="approval.jsx"></script>
-  <script type="text/babel" src="clients.jsx"></script>
-  <script type="text/babel" src="proposals.jsx"></script>
-  <script type="text/babel" src="projects.jsx"></script>
-  <script type="text/babel" src="invoices.jsx"></script>
-  <script type="text/babel" src="agents.jsx"></script>
-  <script type="text/babel" src="integrations.jsx"></script>
-  <script type="text/babel" src="team.jsx"></script>
-  <script type="text/babel" src="settings.jsx"></script>
-  <script type="text/babel" src="onboarding.jsx"></script>
-  <script type="text/babel" src="portal.jsx"></script>
-  <script type="text/babel" src="app.jsx"></script>
-</body>
+    <script type="text/babel" src="icons.jsx"></script>
+    <script type="text/babel" src="data.jsx"></script>
+    <script type="text/babel" src="primitives.jsx"></script>
+    <script type="text/babel" src="aiprofile.jsx"></script>
+    <script type="text/babel" src="docrenderers.jsx"></script>
+    <script type="text/babel" src="dashboard.jsx"></script>
+    <script type="text/babel" src="approval.jsx"></script>
+    <script type="text/babel" src="clients.jsx"></script>
+    <script type="text/babel" src="proposals.jsx"></script>
+    <script type="text/babel" src="projects.jsx"></script>
+    <script type="text/babel" src="invoices.jsx"></script>
+    <script type="text/babel" src="agents.jsx"></script>
+    <script type="text/babel" src="integrations.jsx"></script>
+    <script type="text/babel" src="team.jsx"></script>
+    <script type="text/babel" src="settings.jsx"></script>
+    <script type="text/babel" src="onboarding.jsx"></script>
+    <script type="text/babel" src="portal.jsx"></script>
+    <script type="text/babel" src="app.jsx"></script>
+  </body>
 </html>

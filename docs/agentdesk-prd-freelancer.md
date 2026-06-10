@@ -1,4 +1,5 @@
 # AgentDesk — Freelancer Dashboard PRD
+
 **Version 1.0 | Product: agentdeskhub.com**
 
 ---
@@ -14,6 +15,7 @@ AgentDesk is a SaaS product that acts as an agentic AI assistant for freelancers
 **Primary user:** Solo freelancers (web dev, design, writing, marketing, video)
 
 **Target markets (priority order):**
+
 1. USA + UK (primary, highest LTV)
 2. India + Pakistan (volume)
 3. Canada + Australia (HoneyBook refugees)
@@ -39,13 +41,13 @@ Every agent action shows the freelancer exactly what it did and what it plans to
 
 ## 4. Six Core Agents
 
-| Agent | What it does |
-|---|---|
-| **Lead Scout** | Finds leads, scores fit 0–100, drafts outreach |
-| **Proposal Agent** | Turns call notes into 3-tier proposals with pricing |
-| **Project Manager** | Creates milestones, flags scope creep, sends weekly updates |
-| **Finance Agent** | Invoices from time logs, chases payments, logs revenue |
-| **Client Comms** | Drafts replies, books meetings, sends testimonial requests |
+| Agent               | What it does                                                       |
+| ------------------- | ------------------------------------------------------------------ |
+| **Lead Scout**      | Finds leads, scores fit 0–100, drafts outreach                     |
+| **Proposal Agent**  | Turns call notes into 3-tier proposals with pricing                |
+| **Project Manager** | Creates milestones, flags scope creep, sends weekly updates        |
+| **Finance Agent**   | Invoices from time logs, chases payments, logs revenue             |
+| **Client Comms**    | Drafts replies, books meetings, sends testimonial requests         |
 | **Content & Brand** | Writes case studies, schedules LinkedIn posts, builds social proof |
 
 ---
@@ -91,15 +93,16 @@ Day 52   Payment received
 
 ## 6. Pricing
 
-| Plan | Price | Runs/mo | Model | Notes |
-|---|---|---|---|---|
-| **Trial** | Free | 15 runs | Haiku 4.5 | 14 days, no card required |
-| **Starter** | $19/mo | 30 runs | Haiku 4.5 | |
-| **Pro** | $39/mo | 100 runs | Mixed | |
-| **Agency** | $79/mo | 300 runs | Sonnet 4.6 | |
-| **Top-up** | $2/10 runs | — | — | All plans |
+| Plan        | Price      | Runs/mo  | Model      | Notes                     |
+| ----------- | ---------- | -------- | ---------- | ------------------------- |
+| **Trial**   | Free       | 15 runs  | Haiku 4.5  | 14 days, no card required |
+| **Starter** | $19/mo     | 30 runs  | Haiku 4.5  |                           |
+| **Pro**     | $39/mo     | 100 runs | Mixed      |                           |
+| **Agency**  | $79/mo     | 300 runs | Sonnet 4.6 |                           |
+| **Top-up**  | $2/10 runs | —        | —          | All plans                 |
 
 **Trial rules:**
+
 - 14 days, no credit card required
 - 15 run limit (enough to experience product, not run a business)
 - Soft lock on expiry: can view data, cannot run agents
@@ -109,25 +112,26 @@ Day 52   Payment received
 
 ## 7. Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 14 (App Router) |
-| Language | TypeScript |
-| Styling | Tailwind CSS + shadcn/ui |
-| API | tRPC + Zod + Next.js Route Handlers |
-| Agent queue | BullMQ on Upstash Redis |
-| AI | Anthropic SDK + Vercel AI SDK |
-| Models | Haiku 4.5 (Starter), Sonnet 4.6 (Agency) |
-| Database | Supabase (PostgreSQL) + Drizzle ORM |
-| Auth | Supabase Auth |
-| Storage | Supabase Storage (PDFs, deliverables) |
-| Payments | LemonSqueezy |
-| Hosting | Vercel |
-| Email | Resend + React Email |
-| Errors | Sentry |
+| Layer       | Technology                                    |
+| ----------- | --------------------------------------------- |
+| Framework   | Next.js 14 (App Router)                       |
+| Language    | TypeScript                                    |
+| Styling     | Tailwind CSS + shadcn/ui                      |
+| API         | tRPC + Zod + Next.js Route Handlers           |
+| Agent queue | BullMQ on Upstash Redis                       |
+| AI          | Anthropic SDK + Vercel AI SDK                 |
+| Models      | Haiku 4.5 (Starter), Sonnet 4.6 (Agency)      |
+| Database    | Supabase (PostgreSQL) + Drizzle ORM           |
+| Auth        | Supabase Auth                                 |
+| Storage     | Supabase Storage (PDFs, deliverables)         |
+| Payments    | LemonSqueezy                                  |
+| Hosting     | Vercel                                        |
+| Email       | Resend + React Email                          |
+| Errors      | Sentry                                        |
 | Dev tooling | npm, ESLint, Prettier, Vitest, GitHub Actions |
 
 **Model cost strategy:**
+
 - Prompt caching: 90% off repeated inputs
 - Batch API: 50% off non-urgent runs
 - Combined effective savings: up to 95%
@@ -276,10 +280,12 @@ integrations
 ### 9.1 Lead Intake
 
 **Manual Entry (Tab 1):**
+
 - Full name, company, platform (dropdown), project description, budget (optional), source URL (optional)
 - Toggle: "Run Lead Scout after saving" — on by default
 
 **Paste & Extract (Tab 2):**
+
 - Large textarea: paste job post, LinkedIn profile, email inquiry, anything
 - "Extract with Lead Scout" → pre-fills Tab 1
 - Agent pulls: name, company, budget, requirements, contact info
@@ -288,12 +294,12 @@ integrations
 
 Lead Scout scores each lead 0–100 across four dimensions:
 
-| Dimension | Weight | How scored |
-|---|---|---|
-| Niche match | 35% | Project requirements vs freelancer specializations |
-| Budget fit | 30% | Lead budget vs freelancer minimum rate |
-| Response likelihood | 20% | Post quality signals (recency, detail, hire history) |
-| Project size fit | 15% | Scope vs freelancer preferred engagement size |
+| Dimension           | Weight | How scored                                           |
+| ------------------- | ------ | ---------------------------------------------------- |
+| Niche match         | 35%    | Project requirements vs freelancer specializations   |
+| Budget fit          | 30%    | Lead budget vs freelancer minimum rate               |
+| Response likelihood | 20%    | Post quality signals (recency, detail, hire history) |
+| Project size fit    | 15%    | Scope vs freelancer preferred engagement size        |
 
 **Red flag detection:** "cheapest option" language, no budget, spec work, equity-only, vague brief.
 
@@ -302,12 +308,14 @@ Lead Scout scores each lead 0–100 across four dimensions:
 ### 9.3 Agent Run Approval Flow
 
 Every agent run goes through:
+
 ```
 pending → running → awaiting_approval → done
                                       → failed
 ```
 
 Approval card shows:
+
 - Agent name + icon + timestamp
 - Input context (collapsed, click to expand)
 - Agent output as document preview (NOT chat bubbles)
@@ -317,6 +325,7 @@ Approval card shows:
 ### 9.4 Proposals — 3 Tier System
 
 Proposal Agent generates three pricing tiers:
+
 - **Basic** — core scope, lowest price, shortest timeline
 - **Standard** — recommended, balanced scope
 - **Premium** — full scope, highest price, longest timeline
@@ -326,6 +335,7 @@ Client sees all three tiers in portal, selects one, clicks Accept. Selected tier
 ### 9.5 Transcript Import
 
 Accessible from Clients page and Projects page. Freelancer pastes raw call transcript (Zoom, Otter.ai, manual notes). Agent extracts:
+
 - Client requirements (bulleted, each approvable)
 - Budget mentioned
 - Deadline mentioned
@@ -379,6 +389,7 @@ Each item is a separate agent run awaiting approval.
 ### Phase 1: Foundation (Weeks 1–4)
 
 **Week 1 — Scaffold + Auth**
+
 - Init Next.js 14, pnpm, ESLint, Tailwind, shadcn/ui
 - Supabase project: auth (email/password + magic link), RLS policies
 - Drizzle schema: users, workspaces, clients — run first migration
@@ -387,6 +398,7 @@ Each item is a separate agent run awaiting approval.
 - Build in public: first Twitter post
 
 **Week 2 — Core data + dashboard shell**
+
 - Clients table UI (add/edit/delete, status badges)
 - Proposals schema + basic form
 - Projects + invoices skeleton UI
@@ -394,6 +406,7 @@ Each item is a separate agent run awaiting approval.
 - Dashboard layout + metric cards
 
 **Week 3 — Agent infrastructure**
+
 - Upstash Redis + BullMQ: agent job queue with retry/timeout
 - agent_runs table + status machine
 - Anthropic SDK integration, prompt caching headers
@@ -401,6 +414,7 @@ Each item is a separate agent run awaiting approval.
 - Run counter per workspace (enforce plan limits)
 
 **Week 4 — First 2 agents live**
+
 - Lead Scout: input → AI finds/scores leads → approval → saves to clients
 - Proposal Agent: client + brief → AI drafts 3-tier proposal → approval → saves
 - Notification system (in-app bell + Resend email on approval needed)
@@ -411,6 +425,7 @@ Each item is a separate agent run awaiting approval.
 ### Phase 2: MVP Launch (Weeks 5–8)
 
 **Week 5 — Payments + ProductHunt**
+
 - LemonSqueezy: 3 products, webhook → update workspace plan
 - Plan gate middleware: enforce run limits, upgrade prompt at 80%
 - Billing page: current plan, usage bar, upgrade CTA
@@ -419,18 +434,21 @@ Each item is a separate agent run awaiting approval.
 - Goal: first 3 paying users
 
 **Week 6 — Project Manager Agent**
+
 - PM Agent: project details → AI creates milestone plan (jsonb)
 - Project view: milestone timeline, status updates, deadline warnings
 - Scope creep detection banner
 - Weekly client update toggle + auto-draft
 
 **Week 7 — Finance Agent + invoicing**
+
 - Finance Agent: auto-generate invoice from project + time logs → approval → PDF
 - Payment reminder emails (overdue logic)
 - Income dashboard: pipeline value, hours this week
 - Time logging UI
 
 **Week 8 — Client Comms Agent**
+
 - Client Comms Agent: context + tone → AI drafts email → approval → clipboard
 - Follow-up sequence: reminder → agent drafts check-in email
 - Target: $300 MRR
@@ -441,24 +459,28 @@ Each item is a separate agent run awaiting approval.
 ### Phase 3: Growth (Weeks 9–12)
 
 **Week 9 — Content & Brand Agent**
+
 - Content Agent: completed project → case study → approval → saves as markdown
 - LinkedIn post generator from project outcomes
 - Post-project automation sequence card (4 actions, one card)
 - Full lifecycle demo video (hero content)
 
 **Week 10 — Onboarding + retention**
+
 - Onboarding wizard: 5-step setup
 - Resend drip: welcome, day 3, day 7, day 14
 - Churn signal: 0 runs in 7 days → "need help?" email
 - Target: $2K MRR
 
 **Week 11 — Referral + performance**
+
 - Referral: unique link, 1 free month per conversion
 - Roll out Batch API for non-urgent runs (50% cost cut)
 - Sentry error tracking + Vercel analytics
 - Performance audit
 
 **Week 12 — Agency plan + scale prep**
+
 - Agency plan: 300 runs, Sonnet 4.6 routing, basic team seats
 - SEO: 3 more pages (Dubsado alternative, Bonsai alternative, AI freelance tools)
 - Month-3 retrospective
@@ -468,27 +490,27 @@ Each item is a separate agent run awaiting approval.
 
 ## 11. MRR Milestones
 
-| Month | Target | Users needed |
-|---|---|---|
-| Month 2 | $300 | ~10 paying |
-| Month 4 | $2,000 | ~50 paying |
-| Month 6 | $3,500 | ~90 paying |
-| Month 12 | $10,000 | ~250 paying |
+| Month    | Target  | Users needed |
+| -------- | ------- | ------------ |
+| Month 2  | $300    | ~10 paying   |
+| Month 4  | $2,000  | ~50 paying   |
+| Month 6  | $3,500  | ~90 paying   |
+| Month 12 | $10,000 | ~250 paying  |
 
 ---
 
 ## 12. Infra Costs at Launch
 
-| Service | Cost |
-|---|---|
-| Vercel Pro | $20/mo |
-| Supabase Pro | $25/mo |
-| Upstash Redis | $0–10/mo |
-| Resend | $0 |
-| Sentry | $0 |
-| Domain | $1/mo |
-| Anthropic API (cached) | $5–15/mo |
-| **Total** | **~$51–71/mo** |
+| Service                | Cost           |
+| ---------------------- | -------------- |
+| Vercel Pro             | $20/mo         |
+| Supabase Pro           | $25/mo         |
+| Upstash Redis          | $0–10/mo       |
+| Resend                 | $0             |
+| Sentry                 | $0             |
+| Domain                 | $1/mo          |
+| Anthropic API (cached) | $5–15/mo       |
+| **Total**              | **~$51–71/mo** |
 
 Break-even: 8–14 paying users.
 
@@ -507,23 +529,23 @@ Break-even: 8–14 paying users.
 
 ## 14. Deferred Features
 
-| Feature | When |
-|---|---|
-| Apollo API lead enrichment | Post-launch (month 3+) |
-| Chrome Extension | Month 3 |
-| Kanban board | Month 6 (Agency plan) |
-| RAG / Vector DB | v2 |
-| NestJS / Docker / AWS | At significant revenue scale |
-| Zapier / webhook lead intake | Month 4+ |
+| Feature                      | When                         |
+| ---------------------------- | ---------------------------- |
+| Apollo API lead enrichment   | Post-launch (month 3+)       |
+| Chrome Extension             | Month 3                      |
+| Kanban board                 | Month 6 (Agency plan)        |
+| RAG / Vector DB              | v2                           |
+| NestJS / Docker / AWS        | At significant revenue scale |
+| Zapier / webhook lead intake | Month 4+                     |
 
 ---
 
 ## 15. API Cost Per Run (Post-Caching)
 
-| Tier | Model | Effective cost/run |
-|---|---|---|
-| Starter | Haiku 4.5 cached | ~$0.003 |
-| Pro | Mixed | ~$0.008 |
-| Agency | Sonnet 4.6 cached | ~$0.016 |
+| Tier    | Model             | Effective cost/run |
+| ------- | ----------------- | ------------------ |
+| Starter | Haiku 4.5 cached  | ~$0.003            |
+| Pro     | Mixed             | ~$0.008            |
+| Agency  | Sonnet 4.6 cached | ~$0.016            |
 
 Total API cost at full capacity across all plans: under $20/month at launch.

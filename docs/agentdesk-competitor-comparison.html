@@ -1,1486 +1,2014 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgentDesk vs Competitors — 2026 Comparison</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgentDesk vs Competitors — 2026 Comparison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --indigo:    #4F46E5;
-      --indigo-d:  #3730A3;
-      --indigo-l:  #EEF2FF;
-      --emerald:   #10B981;
-      --emerald-l: #D1FAE5;
-      --rose:      #F43F5E;
-      --rose-l:    #FFE4E6;
-      --amber:     #F59E0B;
-      --amber-l:   #FEF3C7;
-      --zinc-900:  #18181B;
-      --zinc-800:  #27272A;
-      --zinc-700:  #3F3F46;
-      --zinc-500:  #71717A;
-      --zinc-400:  #A1A1AA;
-      --zinc-200:  #E4E4E7;
-      --zinc-100:  #F4F4F5;
-      --zinc-50:   #FAFAFA;
-      --white:     #FFFFFF;
-      --text:      #18181B;
-      --text-sub:  #52525B;
-    }
+      :root {
+        --indigo: #4f46e5;
+        --indigo-d: #3730a3;
+        --indigo-l: #eef2ff;
+        --emerald: #10b981;
+        --emerald-l: #d1fae5;
+        --rose: #f43f5e;
+        --rose-l: #ffe4e6;
+        --amber: #f59e0b;
+        --amber-l: #fef3c7;
+        --zinc-900: #18181b;
+        --zinc-800: #27272a;
+        --zinc-700: #3f3f46;
+        --zinc-500: #71717a;
+        --zinc-400: #a1a1aa;
+        --zinc-200: #e4e4e7;
+        --zinc-100: #f4f4f5;
+        --zinc-50: #fafafa;
+        --white: #ffffff;
+        --text: #18181b;
+        --text-sub: #52525b;
+      }
 
-    html { scroll-behavior: smooth; }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--white);
-      color: var(--text);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        background: var(--white);
+        color: var(--text);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    /* ── HERO ── */
-    .hero {
-      background: var(--zinc-900);
-      padding: 72px 24px 64px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(79,70,229,.35) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(79,70,229,.18);
-      border: 1px solid rgba(79,70,229,.4);
-      border-radius: 99px;
-      padding: 4px 14px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      color: #A5B4FC;
-      margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-size: clamp(28px, 5vw, 52px);
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -.03em;
-      line-height: 1.1;
-      max-width: 760px;
-      margin: 0 auto 20px;
-    }
-    .hero h1 span { color: #818CF8; }
-    .hero-sub {
-      font-size: 17px;
-      color: var(--zinc-400);
-      max-width: 540px;
-      margin: 0 auto 40px;
-      font-weight: 400;
-    }
-    .hero-stat-row {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-    .hero-stat { text-align: center; }
-    .hero-stat-val {
-      display: block;
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -.02em;
-    }
-    .hero-stat-lbl {
-      font-size: 12px;
-      color: var(--zinc-500);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-    }
+      /* ── HERO ── */
+      .hero {
+        background: var(--zinc-900);
+        padding: 72px 24px 64px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 70% 60% at 50% 0%,
+          rgba(79, 70, 229, 0.35) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(79, 70, 229, 0.18);
+        border: 1px solid rgba(79, 70, 229, 0.4);
+        border-radius: 99px;
+        padding: 4px 14px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #a5b4fc;
+        margin-bottom: 24px;
+      }
+      .hero h1 {
+        font-size: clamp(28px, 5vw, 52px);
+        font-weight: 800;
+        color: var(--white);
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        max-width: 760px;
+        margin: 0 auto 20px;
+      }
+      .hero h1 span {
+        color: #818cf8;
+      }
+      .hero-sub {
+        font-size: 17px;
+        color: var(--zinc-400);
+        max-width: 540px;
+        margin: 0 auto 40px;
+        font-weight: 400;
+      }
+      .hero-stat-row {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      .hero-stat {
+        text-align: center;
+      }
+      .hero-stat-val {
+        display: block;
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--white);
+        letter-spacing: -0.02em;
+      }
+      .hero-stat-lbl {
+        font-size: 12px;
+        color: var(--zinc-500);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
 
-    /* ── WRAPPER ── */
-    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+      /* ── WRAPPER ── */
+      .wrap {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
 
-    /* ── SECTION HEADER ── */
-    .sec-header {
-      text-align: center;
-      padding: 64px 24px 40px;
-    }
-    .sec-header h2 {
-      font-size: clamp(22px, 3.5vw, 36px);
-      font-weight: 800;
-      letter-spacing: -.025em;
-      margin-bottom: 12px;
-    }
-    .sec-header p {
-      font-size: 16px;
-      color: var(--text-sub);
-      max-width: 520px;
-      margin: 0 auto;
-    }
+      /* ── SECTION HEADER ── */
+      .sec-header {
+        text-align: center;
+        padding: 64px 24px 40px;
+      }
+      .sec-header h2 {
+        font-size: clamp(22px, 3.5vw, 36px);
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        margin-bottom: 12px;
+      }
+      .sec-header p {
+        font-size: 16px;
+        color: var(--text-sub);
+        max-width: 520px;
+        margin: 0 auto;
+      }
 
-    /* ── COMPETITOR CARDS ── */
-    .competitors-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      padding: 0 24px 56px;
-      max-width: 1160px;
-      margin: 0 auto;
-    }
-    .comp-card {
-      border: 1px solid var(--zinc-200);
-      border-radius: 14px;
-      padding: 24px 20px;
-      background: var(--white);
-      transition: box-shadow .15s;
-    }
-    .comp-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.07); }
-    .comp-card.agentdesk {
-      border-color: var(--indigo);
-      background: var(--indigo-l);
-      box-shadow: 0 0 0 2px var(--indigo);
-    }
-    .comp-name {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .comp-card.agentdesk .comp-name { color: var(--indigo); }
-    .comp-tagline {
-      font-size: 12px;
-      color: var(--text-sub);
-      margin-bottom: 16px;
-      line-height: 1.4;
-    }
-    .comp-price {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -.02em;
-      margin-bottom: 4px;
-    }
-    .comp-card.agentdesk .comp-price { color: var(--indigo); }
-    .comp-price-note {
-      font-size: 11px;
-      color: var(--zinc-500);
-      margin-bottom: 16px;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .comp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 9px;
-      border-radius: 99px;
-      border: 1px solid;
-    }
-    .tag-rose { background: var(--rose-l); color: #BE123C; border-color: #FECDD3; }
-    .tag-amber { background: var(--amber-l); color: #92400E; border-color: #FDE68A; }
-    .tag-emerald { background: var(--emerald-l); color: #065F46; border-color: #A7F3D0; }
-    .tag-indigo { background: var(--indigo-l); color: var(--indigo); border-color: #C7D2FE; }
-    .tag-zinc { background: var(--zinc-100); color: var(--zinc-700); border-color: var(--zinc-200); }
+      /* ── COMPETITOR CARDS ── */
+      .competitors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        padding: 0 24px 56px;
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+      .comp-card {
+        border: 1px solid var(--zinc-200);
+        border-radius: 14px;
+        padding: 24px 20px;
+        background: var(--white);
+        transition: box-shadow 0.15s;
+      }
+      .comp-card:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+      }
+      .comp-card.agentdesk {
+        border-color: var(--indigo);
+        background: var(--indigo-l);
+        box-shadow: 0 0 0 2px var(--indigo);
+      }
+      .comp-name {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .comp-card.agentdesk .comp-name {
+        color: var(--indigo);
+      }
+      .comp-tagline {
+        font-size: 12px;
+        color: var(--text-sub);
+        margin-bottom: 16px;
+        line-height: 1.4;
+      }
+      .comp-price {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 4px;
+      }
+      .comp-card.agentdesk .comp-price {
+        color: var(--indigo);
+      }
+      .comp-price-note {
+        font-size: 11px;
+        color: var(--zinc-500);
+        margin-bottom: 16px;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .comp-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .tag {
+        font-size: 11px;
+        font-weight: 600;
+        padding: 3px 9px;
+        border-radius: 99px;
+        border: 1px solid;
+      }
+      .tag-rose {
+        background: var(--rose-l);
+        color: #be123c;
+        border-color: #fecdd3;
+      }
+      .tag-amber {
+        background: var(--amber-l);
+        color: #92400e;
+        border-color: #fde68a;
+      }
+      .tag-emerald {
+        background: var(--emerald-l);
+        color: #065f46;
+        border-color: #a7f3d0;
+      }
+      .tag-indigo {
+        background: var(--indigo-l);
+        color: var(--indigo);
+        border-color: #c7d2fe;
+      }
+      .tag-zinc {
+        background: var(--zinc-100);
+        color: var(--zinc-700);
+        border-color: var(--zinc-200);
+      }
 
-    /* ── MAIN COMPARISON TABLE ── */
-    .table-section {
-      padding: 0 24px 72px;
-      max-width: 1160px;
-      margin: 0 auto;
-      overflow-x: auto;
-    }
-    .comp-table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 740px;
-      font-size: 13.5px;
-    }
-    .comp-table thead th {
-      padding: 14px 16px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 13px;
-      border-bottom: 2px solid var(--zinc-200);
-      white-space: nowrap;
-    }
-    .comp-table thead th:first-child { text-align: left; }
-    .comp-table thead th.col-agent {
-      background: var(--indigo);
-      color: var(--white);
-      border-radius: 10px 10px 0 0;
-      font-size: 14px;
-    }
-    .comp-table tbody tr:hover { background: var(--zinc-50); }
-    .comp-table tbody td {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--zinc-100);
-      text-align: center;
-      vertical-align: middle;
-    }
-    .comp-table tbody td:first-child {
-      text-align: left;
-      font-weight: 500;
-      color: var(--text);
-    }
-    .comp-table tbody td.col-agent {
-      background: rgba(79,70,229,.04);
-    }
-    .cat-row td {
-      background: var(--zinc-900) !important;
-      color: var(--zinc-400);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 8px 16px;
-    }
-    .cat-row td:first-child { color: var(--zinc-400); }
+      /* ── MAIN COMPARISON TABLE ── */
+      .table-section {
+        padding: 0 24px 72px;
+        max-width: 1160px;
+        margin: 0 auto;
+        overflow-x: auto;
+      }
+      .comp-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 740px;
+        font-size: 13.5px;
+      }
+      .comp-table thead th {
+        padding: 14px 16px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 13px;
+        border-bottom: 2px solid var(--zinc-200);
+        white-space: nowrap;
+      }
+      .comp-table thead th:first-child {
+        text-align: left;
+      }
+      .comp-table thead th.col-agent {
+        background: var(--indigo);
+        color: var(--white);
+        border-radius: 10px 10px 0 0;
+        font-size: 14px;
+      }
+      .comp-table tbody tr:hover {
+        background: var(--zinc-50);
+      }
+      .comp-table tbody td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--zinc-100);
+        text-align: center;
+        vertical-align: middle;
+      }
+      .comp-table tbody td:first-child {
+        text-align: left;
+        font-weight: 500;
+        color: var(--text);
+      }
+      .comp-table tbody td.col-agent {
+        background: rgba(79, 70, 229, 0.04);
+      }
+      .cat-row td {
+        background: var(--zinc-900) !important;
+        color: var(--zinc-400);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 8px 16px;
+      }
+      .cat-row td:first-child {
+        color: var(--zinc-400);
+      }
 
-    .check { color: var(--emerald); font-size: 18px; }
-    .cross { color: var(--rose); font-size: 17px; }
-    .partial { color: var(--amber); font-size: 15px; font-weight: 700; }
-    .cell-note { font-size: 11px; color: var(--zinc-500); display: block; margin-top: 2px; font-style: italic; }
-    .price-cell { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; }
+      .check {
+        color: var(--emerald);
+        font-size: 18px;
+      }
+      .cross {
+        color: var(--rose);
+        font-size: 17px;
+      }
+      .partial {
+        color: var(--amber);
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .cell-note {
+        font-size: 11px;
+        color: var(--zinc-500);
+        display: block;
+        margin-top: 2px;
+        font-style: italic;
+      }
+      .price-cell {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        font-weight: 600;
+      }
 
-    /* ── WINNER BADGE ── */
-    .win-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: var(--indigo);
-      color: var(--white);
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 99px;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-    }
+      /* ── WINNER BADGE ── */
+      .win-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background: var(--indigo);
+        color: var(--white);
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 99px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
 
-    /* ── WHY US SECTION ── */
-    .why-section {
-      background: var(--zinc-900);
-      padding: 72px 24px;
-    }
-    .why-section h2 {
-      font-size: clamp(24px, 4vw, 40px);
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -.03em;
-      text-align: center;
-      margin-bottom: 12px;
-    }
-    .why-section .sub {
-      text-align: center;
-      color: var(--zinc-400);
-      font-size: 16px;
-      margin-bottom: 56px;
-    }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-    .why-card {
-      background: var(--zinc-800);
-      border: 1px solid var(--zinc-700);
-      border-radius: 16px;
-      padding: 28px 24px;
-      transition: border-color .15s;
-    }
-    .why-card:hover { border-color: var(--indigo); }
-    .why-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: rgba(79,70,229,.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      margin-bottom: 16px;
-    }
-    .why-card h3 {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-    .why-card p {
-      font-size: 13.5px;
-      color: var(--zinc-400);
-      line-height: 1.6;
-    }
-    .why-card p strong { color: #A5B4FC; font-weight: 600; }
+      /* ── WHY US SECTION ── */
+      .why-section {
+        background: var(--zinc-900);
+        padding: 72px 24px;
+      }
+      .why-section h2 {
+        font-size: clamp(24px, 4vw, 40px);
+        font-weight: 800;
+        color: var(--white);
+        letter-spacing: -0.03em;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+      .why-section .sub {
+        text-align: center;
+        color: var(--zinc-400);
+        font-size: 16px;
+        margin-bottom: 56px;
+      }
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .why-card {
+        background: var(--zinc-800);
+        border: 1px solid var(--zinc-700);
+        border-radius: 16px;
+        padding: 28px 24px;
+        transition: border-color 0.15s;
+      }
+      .why-card:hover {
+        border-color: var(--indigo);
+      }
+      .why-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: rgba(79, 70, 229, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+      .why-card h3 {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 8px;
+      }
+      .why-card p {
+        font-size: 13.5px;
+        color: var(--zinc-400);
+        line-height: 1.6;
+      }
+      .why-card p strong {
+        color: #a5b4fc;
+        font-weight: 600;
+      }
 
-    /* ── PRICING COMPARISON ── */
-    .pricing-section {
-      padding: 72px 24px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .pricing-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 40px;
-    }
-    .price-card {
-      border: 1px solid var(--zinc-200);
-      border-radius: 12px;
-      padding: 20px 16px;
-      text-align: center;
-    }
-    .price-card.winner {
-      border-color: var(--indigo);
-      background: var(--indigo-l);
-    }
-    .price-brand { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
-    .price-card.winner .price-brand { color: var(--indigo); }
-    .price-amount {
-      font-size: 26px;
-      font-weight: 800;
-      letter-spacing: -.02em;
-      margin-bottom: 2px;
-    }
-    .price-card.winner .price-amount { color: var(--indigo); }
-    .price-per { font-size: 11px; color: var(--zinc-500); margin-bottom: 12px; font-family: 'JetBrains Mono', monospace; }
-    .price-bullet { font-size: 12px; color: var(--text-sub); text-align: left; margin-bottom: 5px; padding-left: 14px; position: relative; }
-    .price-bullet::before { content: '·'; position: absolute; left: 4px; color: var(--zinc-400); }
-    .price-card.winner .price-bullet { color: var(--indigo-d); }
-    .price-verdict {
-      margin-top: 10px;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 4px 8px;
-      border-radius: 6px;
-    }
-    .verdict-bad { background: var(--rose-l); color: #BE123C; }
-    .verdict-ok { background: var(--amber-l); color: #92400E; }
-    .verdict-good { background: var(--emerald-l); color: #065F46; }
-    .verdict-best { background: var(--indigo); color: var(--white); }
+      /* ── PRICING COMPARISON ── */
+      .pricing-section {
+        padding: 72px 24px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .pricing-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+        margin-top: 40px;
+      }
+      .price-card {
+        border: 1px solid var(--zinc-200);
+        border-radius: 12px;
+        padding: 20px 16px;
+        text-align: center;
+      }
+      .price-card.winner {
+        border-color: var(--indigo);
+        background: var(--indigo-l);
+      }
+      .price-brand {
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .price-card.winner .price-brand {
+        color: var(--indigo);
+      }
+      .price-amount {
+        font-size: 26px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 2px;
+      }
+      .price-card.winner .price-amount {
+        color: var(--indigo);
+      }
+      .price-per {
+        font-size: 11px;
+        color: var(--zinc-500);
+        margin-bottom: 12px;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .price-bullet {
+        font-size: 12px;
+        color: var(--text-sub);
+        text-align: left;
+        margin-bottom: 5px;
+        padding-left: 14px;
+        position: relative;
+      }
+      .price-bullet::before {
+        content: "·";
+        position: absolute;
+        left: 4px;
+        color: var(--zinc-400);
+      }
+      .price-card.winner .price-bullet {
+        color: var(--indigo-d);
+      }
+      .price-verdict {
+        margin-top: 10px;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 4px 8px;
+        border-radius: 6px;
+      }
+      .verdict-bad {
+        background: var(--rose-l);
+        color: #be123c;
+      }
+      .verdict-ok {
+        background: var(--amber-l);
+        color: #92400e;
+      }
+      .verdict-good {
+        background: var(--emerald-l);
+        color: #065f46;
+      }
+      .verdict-best {
+        background: var(--indigo);
+        color: var(--white);
+      }
 
-    /* ── MIGRATION BANNER ── */
-    .migration-banner {
-      background: linear-gradient(135deg, var(--indigo) 0%, #7C3AED 100%);
-      margin: 0 24px 72px;
-      border-radius: 20px;
-      padding: 48px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-      flex-wrap: wrap;
-      max-width: 1112px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .migration-text h3 {
-      font-size: clamp(20px, 3vw, 30px);
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -.02em;
-      margin-bottom: 10px;
-    }
-    .migration-text p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 440px; }
-    .migration-cta {
-      background: var(--white);
-      color: var(--indigo);
-      font-size: 14px;
-      font-weight: 700;
-      padding: 14px 28px;
-      border-radius: 10px;
-      text-decoration: none;
-      white-space: nowrap;
-      border: none;
-      cursor: pointer;
-      transition: transform .12s, box-shadow .12s;
-    }
-    .migration-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+      /* ── MIGRATION BANNER ── */
+      .migration-banner {
+        background: linear-gradient(135deg, var(--indigo) 0%, #7c3aed 100%);
+        margin: 0 24px 72px;
+        border-radius: 20px;
+        padding: 48px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        flex-wrap: wrap;
+        max-width: 1112px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .migration-text h3 {
+        font-size: clamp(20px, 3vw, 30px);
+        font-weight: 800;
+        color: var(--white);
+        letter-spacing: -0.02em;
+        margin-bottom: 10px;
+      }
+      .migration-text p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.75);
+        max-width: 440px;
+      }
+      .migration-cta {
+        background: var(--white);
+        color: var(--indigo);
+        font-size: 14px;
+        font-weight: 700;
+        padding: 14px 28px;
+        border-radius: 10px;
+        text-decoration: none;
+        white-space: nowrap;
+        border: none;
+        cursor: pointer;
+        transition:
+          transform 0.12s,
+          box-shadow 0.12s;
+      }
+      .migration-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      }
 
-    /* ── FOOTER ── */
-    .footer {
-      border-top: 1px solid var(--zinc-200);
-      padding: 28px 24px;
-      text-align: center;
-      font-size: 12px;
-      color: var(--zinc-400);
-    }
-    .footer strong { color: var(--indigo); font-weight: 700; }
+      /* ── FOOTER ── */
+      .footer {
+        border-top: 1px solid var(--zinc-200);
+        padding: 28px 24px;
+        text-align: center;
+        font-size: 12px;
+        color: var(--zinc-400);
+      }
+      .footer strong {
+        color: var(--indigo);
+        font-weight: 700;
+      }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      .hero { padding: 48px 20px 40px; }
-      .hero-stat-row { gap: 24px; }
-      .migration-banner { flex-direction: column; text-align: center; }
-      .migration-text p { max-width: 100%; }
-    }
-  </style>
-</head>
-<body>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-eyebrow">2026 Competitor Analysis</div>
-  <h1>Why freelancers are switching<br>to <span>AgentDesk</span></h1>
-  <p class="hero-sub">Every competitor automates rules. AgentDesk has autonomous AI agents that do the work — and only asks you to approve it.</p>
-  <div class="hero-stat-row">
-    <div class="hero-stat">
-      <span class="hero-stat-val">5</span>
-      <span class="hero-stat-lbl">Competitors compared</span>
-    </div>
-    <div class="hero-stat">
-      <span class="hero-stat-val">89%</span>
-      <span class="hero-stat-lbl">HoneyBook price hike (2025)</span>
-    </div>
-    <div class="hero-stat">
-      <span class="hero-stat-val">0</span>
-      <span class="hero-stat-lbl">Competitors with real AI agents</span>
-    </div>
-    <div class="hero-stat">
-      <span class="hero-stat-val">$19</span>
-      <span class="hero-stat-lbl">AgentDesk starts at</span>
-    </div>
-  </div>
-</section>
-
-<!-- COMPETITOR SNAPSHOT CARDS -->
-<div class="sec-header">
-  <h2>The landscape at a glance</h2>
-  <p>Every tool that freelancers use to manage their business — and where they fall short.</p>
-</div>
-
-<div class="competitors-grid">
-
-  <div class="comp-card agentdesk">
-    <div class="comp-name">🤖 AgentDesk</div>
-    <div class="comp-tagline">AI agents that run your freelance business. You just approve.</div>
-    <div class="comp-price">$19/mo</div>
-    <div class="comp-price-note">14-day free trial · no card</div>
-    <div class="comp-tags">
-      <span class="tag tag-indigo">AI Agents</span>
-      <span class="tag tag-indigo">Global</span>
-      <span class="tag tag-emerald">Affordable</span>
-    </div>
-  </div>
-
-  <div class="comp-card">
-    <div class="comp-name">🍯 HoneyBook</div>
-    <div class="comp-tagline">Client management for creatives. US &amp; Canada only.</div>
-    <div class="comp-price">$36/mo</div>
-    <div class="comp-price-note">↑89% price hike in 2025 · 7-day trial</div>
-    <div class="comp-tags">
-      <span class="tag tag-rose">US/CA only</span>
-      <span class="tag tag-rose">Expensive</span>
-      <span class="tag tag-amber">Rules-based AI</span>
-    </div>
-  </div>
-
-  <div class="comp-card">
-    <div class="comp-name">📋 Dubsado</div>
-    <div class="comp-tagline">Deep form customisation. Weeks to set up. No true AI.</div>
-    <div class="comp-price">$35/mo</div>
-    <div class="comp-price-note">↑75% price hike in Dec 2025 · no trial</div>
-    <div class="comp-tags">
-      <span class="tag tag-rose">Hard to set up</span>
-      <span class="tag tag-amber">Rules only</span>
-      <span class="tag tag-zinc">No AI agents</span>
-    </div>
-  </div>
-
-  <div class="comp-card">
-    <div class="comp-name">🌿 Bonsai</div>
-    <div class="comp-tagline">Solo freelancer tool. Acquired by Zoom Dec 2025.</div>
-    <div class="comp-price">$19/mo</div>
-    <div class="comp-price-note">Per-user pricing · owned by Zoom</div>
-    <div class="comp-tags">
-      <span class="tag tag-amber">Zoom uncertainty</span>
-      <span class="tag tag-amber">Per-user fees</span>
-      <span class="tag tag-zinc">No AI agents</span>
-    </div>
-  </div>
-
-  <div class="comp-card">
-    <div class="comp-name">🔷 Plutio</div>
-    <div class="comp-tagline">All-in-one for agencies. Good PM, weak AI.</div>
-    <div class="comp-price">$19/mo</div>
-    <div class="comp-price-note">9-client cap on Core plan</div>
-    <div class="comp-tags">
-      <span class="tag tag-amber">Client cap</span>
-      <span class="tag tag-zinc">No AI agents</span>
-      <span class="tag tag-emerald">Good PM</span>
-    </div>
-  </div>
-
-  <div class="comp-card">
-    <div class="comp-name">🏷️ 17hats</div>
-    <div class="comp-tagline">Veteran platform. Outdated UX. No modern AI.</div>
-    <div class="comp-price">$45/mo</div>
-    <div class="comp-price-note">Annual only discount · dated interface</div>
-    <div class="comp-tags">
-      <span class="tag tag-rose">Dated UX</span>
-      <span class="tag tag-rose">Expensive</span>
-      <span class="tag tag-zinc">No AI agents</span>
-    </div>
-  </div>
-
-</div>
-
-<!-- MAIN FEATURE COMPARISON TABLE -->
-<div class="sec-header">
-  <h2>Feature-by-feature comparison</h2>
-  <p>Every capability that matters for running a freelance business. Verified June 2026.</p>
-</div>
-
-<div class="table-section">
-  <table class="comp-table">
-    <thead>
-      <tr>
-        <th style="width:220px">Feature</th>
-        <th class="col-agent">AgentDesk<br><span class="win-badge">⚡ AI-first</span></th>
-        <th>HoneyBook</th>
-        <th>Dubsado</th>
-        <th>Bonsai</th>
-        <th>Plutio</th>
-        <th>17hats</th>
-      </tr>
-    </thead>
-    <tbody>
-
-      <!-- PRICING -->
-      <tr class="cat-row"><td colspan="7">Pricing</td></tr>
-      <tr>
-        <td>Starting price</td>
-        <td class="col-agent price-cell">$19/mo</td>
-        <td class="price-cell">$36/mo</td>
-        <td class="price-cell">$35/mo</td>
-        <td class="price-cell">$19/mo</td>
-        <td class="price-cell">$19/mo</td>
-        <td class="price-cell">$45/mo</td>
-      </tr>
-      <tr>
-        <td>Free trial</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">14 days · no card</span></td>
-        <td><span class="check">✓</span><span class="cell-note">7 days only</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">No trial</span></td>
-        <td><span class="check">✓</span><span class="cell-note">7 days</span></td>
-        <td><span class="check">✓</span><span class="cell-note">7 days</span></td>
-        <td><span class="partial">~</span><span class="cell-note">Annual only</span></td>
-      </tr>
-      <tr>
-        <td>Credit card required for trial</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">No card needed</span></td>
-        <td><span class="check">✓</span><span class="cell-note">No card needed</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">No trial at all</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">Card required</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">Card required</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">Card required</span></td>
-      </tr>
-      <tr>
-        <td>Available globally (incl. Pakistan, India)</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">Worldwide</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">US &amp; Canada only</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-      </tr>
-      <tr>
-        <td>Transaction fees</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">None (LemonSqueezy)</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">2.9% + $0.25/card</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">~3% Stripe fees</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">Extra above Stripe</span></td>
-        <td><span class="check">✓</span><span class="cell-note">None extra</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">Stripe fees</span></td>
-      </tr>
-
-      <!-- AI & AGENTS -->
-      <tr class="cat-row"><td colspan="7">AI & Automation</td></tr>
-      <tr>
-        <td>Autonomous AI agents</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">6 full agents</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-      <tr>
-        <td>Human-in-loop approval</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">Every agent action</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-      <tr>
-        <td>AI lead scoring (0–100)</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">4-dimension fit score</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-      <tr>
-        <td>AI proposal writing</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">3-tier proposals from call notes</span></td>
-        <td><span class="partial">~</span><span class="cell-note">AI drafts only</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-      <tr>
-        <td>Call transcript → requirements</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">Paste transcript, AI extracts all</span></td>
-        <td><span class="partial">~</span><span class="cell-note">Meeting notes only</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-      <tr>
-        <td>AI invoice generation from time logs</td>
-        <td class="col-agent"><span class="check">✓</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-      <tr>
-        <td>AI case study + LinkedIn post generator</td>
-        <td class="col-agent"><span class="check">✓</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-      <tr>
-        <td>Scope creep detection</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">Auto-flagged by PM agent</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-      <tr>
-        <td>Rules-based automation</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">+AI agents on top</span></td>
-        <td><span class="check">✓</span><span class="cell-note">Essentials+ only</span></td>
-        <td><span class="check">✓</span><span class="cell-note">Premier only</span></td>
-        <td><span class="partial">~</span><span class="cell-note">Basic triggers</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="partial">~</span></td>
-      </tr>
-
-      <!-- CORE FEATURES -->
-      <tr class="cat-row"><td colspan="7">Core Features</td></tr>
-      <tr>
-        <td>Client management (CRM)</td>
-        <td class="col-agent"><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-      </tr>
-      <tr>
-        <td>Proposals</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">3 tiers, AI-generated</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-      </tr>
-      <tr>
-        <td>Contracts / e-signatures</td>
-        <td class="col-agent"><span class="partial">~</span><span class="cell-note">Roadmap (Q3 2026)</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-      </tr>
-      <tr>
-        <td>Invoicing</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">AI-generated from time logs</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-      </tr>
-      <tr>
-        <td>Project management</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">AI milestone planning</span></td>
-        <td><span class="partial">~</span><span class="cell-note">Basic only</span></td>
-        <td><span class="partial">~</span><span class="cell-note">Kanban, no Gantt</span></td>
-        <td><span class="partial">~</span><span class="cell-note">Gantt on Premium</span></td>
-        <td><span class="check">✓</span><span class="cell-note">Strong PM</span></td>
-        <td><span class="partial">~</span></td>
-      </tr>
-      <tr>
-        <td>Time tracking</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">Feeds into invoices</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="partial">~</span></td>
-      </tr>
-      <tr>
-        <td>Client portal</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">White-label, no login needed</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="partial">~</span><span class="cell-note">Limited</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="partial">~</span></td>
-      </tr>
-      <tr>
-        <td>Scheduling / Calendly integration</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">Calendly OAuth integration</span></td>
-        <td><span class="check">✓</span><span class="cell-note">Built-in scheduler</span></td>
-        <td><span class="check">✓</span><span class="cell-note">Premier only</span></td>
-        <td><span class="partial">~</span></td>
-        <td><span class="partial">~</span></td>
-        <td><span class="check">✓</span></td>
-      </tr>
-
-      <!-- EXPERIENCE -->
-      <tr class="cat-row"><td colspan="7">User Experience</td></tr>
-      <tr>
-        <td>Setup time</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">1–2 hrs (5-step wizard)</span></td>
-        <td><span class="partial">~</span><span class="cell-note">2–4 hrs</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">15–25 hrs (complex)</span></td>
-        <td><span class="check">✓</span><span class="cell-note">~1 hr (templates)</span></td>
-        <td><span class="partial">~</span><span class="cell-note">3–5 hrs</span></td>
-        <td><span class="partial">~</span><span class="cell-note">3–6 hrs</span></td>
-      </tr>
-      <tr>
-        <td>Mobile experience</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">Mobile-first client portal</span></td>
-        <td><span class="check">✓</span><span class="cell-note">iOS &amp; Android app</span></td>
-        <td><span class="partial">~</span><span class="cell-note">Mobile-responsive only</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="partial">~</span></td>
-        <td><span class="partial">~</span></td>
-      </tr>
-      <tr>
-        <td>Modern UI / UX</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">Clean, Linear-inspired</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="partial">~</span><span class="cell-note">Better in 3.0</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="partial">~</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">Dated</span></td>
-      </tr>
-      <tr>
-        <td>Ownership stability</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">Independent, founder-led</span></td>
-        <td><span class="check">✓</span><span class="cell-note">VC-backed</span></td>
-        <td><span class="check">✓</span><span class="cell-note">Independent</span></td>
-        <td><span class="cross">✗</span><span class="cell-note">Acquired by Zoom (Dec 2025)</span></td>
-        <td><span class="check">✓</span></td>
-        <td><span class="check">✓</span></td>
-      </tr>
-
-      <!-- UNIQUE TO AGENTDESK -->
-      <tr class="cat-row"><td colspan="7">Only in AgentDesk</td></tr>
-      <tr>
-        <td>AI outreach drafting after lead scoring</td>
-        <td class="col-agent"><span class="check">✓</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-      <tr>
-        <td>Post-project automation sequence</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">Case study + LinkedIn + testimonial</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-      <tr>
-        <td>Full freelance lifecycle in one AI loop</td>
-        <td class="col-agent"><span class="check">✓</span><span class="cell-note">Lead → invoice → case study</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-      <tr>
-        <td>Weekly AI-generated client updates</td>
-        <td class="col-agent"><span class="check">✓</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-        <td><span class="cross">✗</span></td>
-      </tr>
-
-    </tbody>
-  </table>
-</div>
-
-<!-- PRICING COMPARISON -->
-<div class="sec-header">
-  <h2>Real cost comparison</h2>
-  <p>What you actually pay for comparable features. Prices verified June 2026.</p>
-</div>
-
-<div class="pricing-section">
-  <div class="pricing-cards">
-
-    <div class="price-card winner">
-      <div class="price-brand">AgentDesk</div>
-      <div class="price-amount">$19</div>
-      <div class="price-per">/month · Starter</div>
-      <div class="price-bullet">30 AI agent runs</div>
-      <div class="price-bullet">6 autonomous agents</div>
-      <div class="price-bullet">Client portal included</div>
-      <div class="price-bullet">Global (all countries)</div>
-      <div class="price-bullet">14-day trial, no card</div>
-      <div class="price-verdict verdict-best">Best value</div>
-    </div>
-
-    <div class="price-card">
-      <div class="price-brand">HoneyBook</div>
-      <div class="price-amount">$36</div>
-      <div class="price-per">/month · Starter</div>
-      <div class="price-bullet">No AI agents</div>
-      <div class="price-bullet">Basic automations</div>
-      <div class="price-bullet">US &amp; Canada only</div>
-      <div class="price-bullet">+2.9% transaction fee</div>
-      <div class="price-bullet">7-day trial only</div>
-      <div class="price-verdict verdict-bad">89% price hike</div>
-    </div>
-
-    <div class="price-card">
-      <div class="price-brand">Dubsado</div>
-      <div class="price-amount">$35</div>
-      <div class="price-per">/month · Starter</div>
-      <div class="price-bullet">No automations</div>
-      <div class="price-bullet">15–25 hrs setup</div>
-      <div class="price-bullet">No AI agents</div>
-      <div class="price-bullet">No free trial</div>
-      <div class="price-bullet">Premier $55/mo for automation</div>
-      <div class="price-verdict verdict-bad">Worst value</div>
-    </div>
-
-    <div class="price-card">
-      <div class="price-brand">Bonsai</div>
-      <div class="price-amount">$19</div>
-      <div class="price-per">/user/month · Essentials</div>
-      <div class="price-bullet">No AI agents</div>
-      <div class="price-bullet">Acquired by Zoom</div>
-      <div class="price-bullet">Per-user pricing scales up</div>
-      <div class="price-bullet">Extra Stripe fees</div>
-      <div class="price-bullet">Product direction uncertain</div>
-      <div class="price-verdict verdict-ok">Unstable ownership</div>
-    </div>
-
-    <div class="price-card">
-      <div class="price-brand">Plutio</div>
-      <div class="price-amount">$19</div>
-      <div class="price-per">/month · Core</div>
-      <div class="price-bullet">No AI agents</div>
-      <div class="price-bullet">9-client cap on Core</div>
-      <div class="price-bullet">Good project management</div>
-      <div class="price-bullet">Pro $49/mo for full access</div>
-      <div class="price-bullet">No global presence</div>
-      <div class="price-verdict verdict-ok">OK for PM, weak on AI</div>
-    </div>
-
-    <div class="price-card">
-      <div class="price-brand">17hats</div>
-      <div class="price-amount">$45</div>
-      <div class="price-per">/month</div>
-      <div class="price-bullet">No AI agents</div>
-      <div class="price-bullet">Outdated interface</div>
-      <div class="price-bullet">Most expensive entry point</div>
-      <div class="price-bullet">Annual billing required</div>
-      <div class="price-bullet">No modern AI features</div>
-      <div class="price-verdict verdict-bad">Overpriced &amp; dated</div>
-    </div>
-
-  </div>
-</div>
-
-<!-- WHY US SECTION -->
-<section class="why-section">
-  <h2>Why freelancers choose AgentDesk</h2>
-  <p class="sub">Six reasons no competitor can match.</p>
-
-  <div class="why-grid">
-
-    <div class="why-card">
-      <div class="why-icon">🤖</div>
-      <h3>The only product with real AI agents</h3>
-      <p>Every competitor offers <strong>rules-based automation</strong> — you configure triggers, they fire. AgentDesk has six autonomous AI agents that actually do the work: research leads, write proposals, draft emails, generate invoices. You review and approve. That's the entire difference.</p>
-    </div>
-
-    <div class="why-card">
-      <div class="why-icon">🔁</div>
-      <h3>The complete freelance lifecycle, automated</h3>
-      <p>HoneyBook handles onboarding. Dubsado handles forms. Bonsai handles invoices. <strong>AgentDesk handles all of it</strong> — from the moment a lead is found to the case study published after the project closes. One tool. One AI brain. Zero context switching.</p>
-    </div>
-
-    <div class="why-card">
-      <div class="why-icon">✅</div>
-      <h3>Human-in-loop by design</h3>
-      <p>Every agent action shows you <strong>exactly what it did and what it plans to send</strong> — before anything happens. Approve, edit, or reject in one click. You're always in control. The AI does the work, you make the call. No surprises, no accidental emails.</p>
-    </div>
-
-    <div class="why-card">
-      <div class="why-icon">🌍</div>
-      <h3>Built for global freelancers</h3>
-      <p>HoneyBook is <strong>US and Canada only</strong>. AgentDesk works everywhere from day one — Pakistan, India, UK, Nigeria, Brazil. Payments via LemonSqueezy (works in 140+ countries). No geographic walls on who can run their business with AI.</p>
-    </div>
-
-    <div class="why-card">
-      <div class="why-icon">💸</div>
-      <h3>Half the price of HoneyBook, 10× the AI</h3>
-      <p>HoneyBook raised prices <strong>89% in 2025</strong>. Their Starter is now $36/month with zero AI agents. AgentDesk Starter is $19/month with six AI agents, a client portal, time logging, and a 14-day free trial. More product. Lower price. No transaction fees.</p>
-    </div>
-
-    <div class="why-card">
-      <div class="why-icon">🚀</div>
-      <h3>Ready in 2 hours, not 25</h3>
-      <p>Dubsado is notoriously hard to set up — an <strong>entire industry of paid setup specialists</strong> exists for it. AgentDesk has a 5-step guided wizard. Your AI Profile trains all six agents in one sitting. First lead scored and first proposal drafted before the end of day one.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- MIGRATION BANNER -->
-<div style="padding: 64px 24px 24px; max-width: 1160px; margin: 0 auto;">
-  <div class="migration-banner">
-    <div class="migration-text">
-      <h3>Coming from HoneyBook?<br>You're not alone.</h3>
-      <p>Thousands of freelancers are leaving after the 89% price hike. AgentDesk imports your clients and proposals — and adds six AI agents on top. 14 days free, no card required.</p>
-    </div>
-    <a href="https://agentdeskhub.com/signup" class="migration-cta">Start free trial →</a>
-  </div>
-</div>
-
-<!-- MARKET INTELLIGENCE SECTION -->
-<div class="sec-header" style="padding-top:72px">
-  <h2>Market size &amp; competitor revenue</h2>
-  <p>Where the money is — and where the opportunity is wide open.</p>
-</div>
-
-<div class="market-section">
-
-  <!-- MARKET OVERVIEW BAR -->
-  <div class="market-overview">
-    <div class="market-stat">
-      <div class="market-stat-val">$7.84B</div>
-      <div class="market-stat-lbl">Agentic AI market 2025</div>
-    </div>
-    <div class="market-divider"></div>
-    <div class="market-stat">
-      <div class="market-stat-val">$52.6B</div>
-      <div class="market-stat-lbl">Projected by 2030</div>
-    </div>
-    <div class="market-divider"></div>
-    <div class="market-stat">
-      <div class="market-stat-val">46.3%</div>
-      <div class="market-stat-lbl">CAGR growth rate</div>
-    </div>
-    <div class="market-divider"></div>
-    <div class="market-stat">
-      <div class="market-stat-val">73M+</div>
-      <div class="market-stat-lbl">Freelancers in the US alone</div>
-    </div>
-    <div class="market-divider"></div>
-    <div class="market-stat">
-      <div class="market-stat-val">0</div>
-      <div class="market-stat-lbl">Competitors with true AI agents</div>
-    </div>
-  </div>
-
-  <!-- COMPETITOR REVENUE CARDS -->
-  <div class="rev-grid">
-
-    <!-- HoneyBook -->
-    <div class="rev-card rev-card-top">
-      <div class="rev-card-header">
-        <div class="rev-logo hb">🍯</div>
-        <div>
-          <div class="rev-name">HoneyBook</div>
-          <div class="rev-founded">Founded 2013 · VC-backed · $498M raised</div>
+      /* ── RESPONSIVE ── */
+      @media (max-width: 640px) {
+        .hero {
+          padding: 48px 20px 40px;
+        }
+        .hero-stat-row {
+          gap: 24px;
+        }
+        .migration-banner {
+          flex-direction: column;
+          text-align: center;
+        }
+        .migration-text p {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-eyebrow">2026 Competitor Analysis</div>
+      <h1>Why freelancers are switching<br />to <span>AgentDesk</span></h1>
+      <p class="hero-sub">
+        Every competitor automates rules. AgentDesk has autonomous AI agents
+        that do the work — and only asks you to approve it.
+      </p>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <span class="hero-stat-val">5</span>
+          <span class="hero-stat-lbl">Competitors compared</span>
         </div>
-        <div class="rev-badge badge-danger">89% price hike</div>
-      </div>
-      <div class="rev-metrics">
-        <div class="rev-metric">
-          <div class="rev-metric-val">$140M</div>
-          <div class="rev-metric-lbl">ARR (March 2025)</div>
+        <div class="hero-stat">
+          <span class="hero-stat-val">89%</span>
+          <span class="hero-stat-lbl">HoneyBook price hike (2025)</span>
         </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">~100K</div>
-          <div class="rev-metric-lbl">Paying customers</div>
+        <div class="hero-stat">
+          <span class="hero-stat-val">0</span>
+          <span class="hero-stat-lbl">Competitors with real AI agents</span>
         </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">$2.4B</div>
-          <div class="rev-metric-lbl">Valuation (2021)</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">12%</div>
-          <div class="rev-metric-lbl">YoY growth (slowing)</div>
+        <div class="hero-stat">
+          <span class="hero-stat-val">$19</span>
+          <span class="hero-stat-lbl">AgentDesk starts at</span>
         </div>
       </div>
-      <div class="rev-insight">
-        <span class="insight-icon">💡</span>
-        <span>The biggest fish — but US/Canada only and just hiked prices 89%. Every frustrated HoneyBook user is a warm lead for AgentDesk. They collected $18B in transactions, proving massive willingness to pay in this market.</span>
-      </div>
-      <div class="rev-source">Source: Sacra research · TechCrunch March 2025 · Getlatka 2026</div>
+    </section>
+
+    <!-- COMPETITOR SNAPSHOT CARDS -->
+    <div class="sec-header">
+      <h2>The landscape at a glance</h2>
+      <p>
+        Every tool that freelancers use to manage their business — and where
+        they fall short.
+      </p>
     </div>
 
-    <!-- Dubsado -->
-    <div class="rev-card">
-      <div class="rev-card-header">
-        <div class="rev-logo db">📋</div>
-        <div>
-          <div class="rev-name">Dubsado</div>
-          <div class="rev-founded">Founded 2015 · Bootstrapped · 51 employees</div>
+    <div class="competitors-grid">
+      <div class="comp-card agentdesk">
+        <div class="comp-name">🤖 AgentDesk</div>
+        <div class="comp-tagline">
+          AI agents that run your freelance business. You just approve.
         </div>
-        <div class="rev-badge badge-warning">Bootstrapped</div>
-      </div>
-      <div class="rev-metrics">
-        <div class="rev-metric">
-          <div class="rev-metric-val">~$2.5M</div>
-          <div class="rev-metric-lbl">Est. ARR</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">~7K–10K</div>
-          <div class="rev-metric-lbl">Est. paying users</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">$1.5B</div>
-          <div class="rev-metric-lbl">Payments processed (2025)</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">583K</div>
-          <div class="rev-metric-lbl">Projects completed (2025)</div>
+        <div class="comp-price">$19/mo</div>
+        <div class="comp-price-note">14-day free trial · no card</div>
+        <div class="comp-tags">
+          <span class="tag tag-indigo">AI Agents</span>
+          <span class="tag tag-indigo">Global</span>
+          <span class="tag tag-emerald">Affordable</span>
         </div>
       </div>
-      <div class="rev-insight">
-        <span class="insight-icon">💡</span>
-        <span>Completely bootstrapped — a small company punching above its weight. Strong in the photography/wedding niche (38% market share). Their v3.0 rebuild + December 2025 price hike is causing churn among users who don't need the complexity.</span>
-      </div>
-      <div class="rev-source">Source: Getlatka · Owler · Dubsado 2025 Year in Review blog</div>
-    </div>
 
-    <!-- Bonsai -->
-    <div class="rev-card">
-      <div class="rev-card-header">
-        <div class="rev-logo bn">🌿</div>
-        <div>
-          <div class="rev-name">Bonsai</div>
-          <div class="rev-founded">Founded 2016 · Acquired by Zoom Dec 2025</div>
+      <div class="comp-card">
+        <div class="comp-name">🍯 HoneyBook</div>
+        <div class="comp-tagline">
+          Client management for creatives. US &amp; Canada only.
         </div>
-        <div class="rev-badge badge-warning">Zoom owned</div>
-      </div>
-      <div class="rev-metrics">
-        <div class="rev-metric">
-          <div class="rev-metric-val">~$10M</div>
-          <div class="rev-metric-lbl">Est. ARR</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">~30K–50K</div>
-          <div class="rev-metric-lbl">Est. paying users</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">90%</div>
-          <div class="rev-metric-lbl">Subscriber retention rate</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">4.6★</div>
-          <div class="rev-metric-lbl">Capterra rating</div>
+        <div class="comp-price">$36/mo</div>
+        <div class="comp-price-note">↑89% price hike in 2025 · 7-day trial</div>
+        <div class="comp-tags">
+          <span class="tag tag-rose">US/CA only</span>
+          <span class="tag tag-rose">Expensive</span>
+          <span class="tag tag-amber">Rules-based AI</span>
         </div>
       </div>
-      <div class="rev-insight">
-        <span class="insight-icon">💡</span>
-        <span>Popular and well-loved — but the Zoom acquisition creates uncertainty. Users loyal to "indie Bonsai" are already looking for alternatives. Strong on simplicity, weak on AI, weak on project management depth.</span>
-      </div>
-      <div class="rev-source">Source: Capterra · Agiled comparison · SoftwareAdvice 2026</div>
-    </div>
 
-    <!-- Plutio -->
-    <div class="rev-card">
-      <div class="rev-card-header">
-        <div class="rev-logo pl">🔷</div>
-        <div>
-          <div class="rev-name">Plutio</div>
-          <div class="rev-founded">Founded 2017 · Bootstrapped · ~10 employees</div>
+      <div class="comp-card">
+        <div class="comp-name">📋 Dubsado</div>
+        <div class="comp-tagline">
+          Deep form customisation. Weeks to set up. No true AI.
         </div>
-        <div class="rev-badge badge-neutral">Bootstrapped</div>
-      </div>
-      <div class="rev-metrics">
-        <div class="rev-metric">
-          <div class="rev-metric-val">~$1M</div>
-          <div class="rev-metric-lbl">Est. ARR</div>
+        <div class="comp-price">$35/mo</div>
+        <div class="comp-price-note">
+          ↑75% price hike in Dec 2025 · no trial
         </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">~3K–5K</div>
-          <div class="rev-metric-lbl">Est. paying users</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">4.6★</div>
-          <div class="rev-metric-lbl">G2 rating</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">$19/mo</div>
-          <div class="rev-metric-lbl">Entry price (9-client cap)</div>
+        <div class="comp-tags">
+          <span class="tag tag-rose">Hard to set up</span>
+          <span class="tag tag-amber">Rules only</span>
+          <span class="tag tag-zinc">No AI agents</span>
         </div>
       </div>
-      <div class="rev-insight">
-        <span class="insight-icon">💡</span>
-        <span>Small but solid. Best project management of the group. The 9-client cap on Core forces users to $49/mo Pro earlier than expected. No meaningful AI investment. Ideal for agencies, underserves solo freelancers.</span>
-      </div>
-      <div class="rev-source">Source: G2 · Plutio pricing page · Agiled comparison 2026</div>
-    </div>
 
-    <!-- 17hats -->
-    <div class="rev-card">
-      <div class="rev-card-header">
-        <div class="rev-logo sh">🏷️</div>
-        <div>
-          <div class="rev-name">17hats</div>
-          <div class="rev-founded">Founded 2013 · Bootstrapped · dated platform</div>
+      <div class="comp-card">
+        <div class="comp-name">🌿 Bonsai</div>
+        <div class="comp-tagline">
+          Solo freelancer tool. Acquired by Zoom Dec 2025.
         </div>
-        <div class="rev-badge badge-danger">Declining</div>
-      </div>
-      <div class="rev-metrics">
-        <div class="rev-metric">
-          <div class="rev-metric-val">~$5M</div>
-          <div class="rev-metric-lbl">Est. ARR</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">~10K</div>
-          <div class="rev-metric-lbl">Est. paying users</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">$45/mo</div>
-          <div class="rev-metric-lbl">Starting price (highest)</div>
-        </div>
-        <div class="rev-metric">
-          <div class="rev-metric-val">4.3★</div>
-          <div class="rev-metric-lbl">G2 rating (100+ reviews)</div>
+        <div class="comp-price">$19/mo</div>
+        <div class="comp-price-note">Per-user pricing · owned by Zoom</div>
+        <div class="comp-tags">
+          <span class="tag tag-amber">Zoom uncertainty</span>
+          <span class="tag tag-amber">Per-user fees</span>
+          <span class="tag tag-zinc">No AI agents</span>
         </div>
       </div>
-      <div class="rev-insight">
-        <span class="insight-icon">💡</span>
-        <span>The oldest platform in the list — and it shows. "Documents look like 2015" is a real G2 complaint. Most expensive entry price with the least modern feature set. Users who need AI are already leaving.</span>
-      </div>
-      <div class="rev-source">Source: Plutio comparison · G2 reviews · Capterra 2026</div>
-    </div>
 
-    <!-- AgentDesk -->
-    <div class="rev-card rev-card-agent">
-      <div class="rev-card-header">
-        <div class="rev-logo ag">🤖</div>
-        <div>
-          <div class="rev-name">AgentDesk</div>
-          <div class="rev-founded">Launching 2026 · Solo founder · $0 raised</div>
+      <div class="comp-card">
+        <div class="comp-name">🔷 Plutio</div>
+        <div class="comp-tagline">
+          All-in-one for agencies. Good PM, weak AI.
         </div>
-        <div class="rev-badge badge-indigo">AI-first</div>
-      </div>
-      <div class="rev-metrics">
-        <div class="rev-metric rev-metric-agent">
-          <div class="rev-metric-val">$0 → $10K</div>
-          <div class="rev-metric-lbl">MRR target by month 12</div>
-        </div>
-        <div class="rev-metric rev-metric-agent">
-          <div class="rev-metric-val">~250</div>
-          <div class="rev-metric-lbl">Paying users to hit $10K MRR</div>
-        </div>
-        <div class="rev-metric rev-metric-agent">
-          <div class="rev-metric-val">8–14</div>
-          <div class="rev-metric-lbl">Users to break even</div>
-        </div>
-        <div class="rev-metric rev-metric-agent">
-          <div class="rev-metric-val">$19–79</div>
-          <div class="rev-metric-lbl">Pricing range/mo</div>
+        <div class="comp-price">$19/mo</div>
+        <div class="comp-price-note">9-client cap on Core plan</div>
+        <div class="comp-tags">
+          <span class="tag tag-amber">Client cap</span>
+          <span class="tag tag-zinc">No AI agents</span>
+          <span class="tag tag-emerald">Good PM</span>
         </div>
       </div>
-      <div class="rev-insight rev-insight-agent">
-        <span class="insight-icon">🚀</span>
-        <span>The only new entrant with true AI agents. Targeting the 100,000+ users frustrated with HoneyBook's price hike and Bonsai's Zoom acquisition. Don't need to win the whole market — capturing 0.25% of HoneyBook's user base equals $350K ARR.</span>
-      </div>
-      <div class="rev-source" style="color:rgba(255,255,255,.4)">Internal projections based on market data · June 2026</div>
-    </div>
 
-  </div>
-
-  <!-- OPPORTUNITY CALLOUT -->
-  <div class="opportunity-box">
-    <div class="opp-left">
-      <div class="opp-label">THE OPPORTUNITY IN ONE SENTENCE</div>
-      <div class="opp-headline">HoneyBook has 100K users paying $36–129/mo with no AI agents.<br>AgentDesk offers AI agents starting at $19/mo.</div>
-    </div>
-    <div class="opp-right">
-      <div class="opp-stat-row">
-        <div class="opp-stat">
-          <div class="opp-stat-val">0.1%</div>
-          <div class="opp-stat-lbl">of HoneyBook's users = 100 paying customers</div>
+      <div class="comp-card">
+        <div class="comp-name">🏷️ 17hats</div>
+        <div class="comp-tagline">
+          Veteran platform. Outdated UX. No modern AI.
         </div>
-        <div class="opp-stat">
-          <div class="opp-stat-val">$39K</div>
-          <div class="opp-stat-lbl">MRR at avg $39/user</div>
+        <div class="comp-price">$45/mo</div>
+        <div class="comp-price-note">
+          Annual only discount · dated interface
         </div>
-        <div class="opp-stat">
-          <div class="opp-stat-val">$468K</div>
-          <div class="opp-stat-lbl">ARR from 0.1% of one competitor</div>
+        <div class="comp-tags">
+          <span class="tag tag-rose">Dated UX</span>
+          <span class="tag tag-rose">Expensive</span>
+          <span class="tag tag-zinc">No AI agents</span>
         </div>
       </div>
     </div>
-  </div>
 
-</div>
+    <!-- MAIN FEATURE COMPARISON TABLE -->
+    <div class="sec-header">
+      <h2>Feature-by-feature comparison</h2>
+      <p>
+        Every capability that matters for running a freelance business. Verified
+        June 2026.
+      </p>
+    </div>
 
-<style>
-/* ── MARKET SECTION ── */
-.market-section {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 24px 72px;
-}
-.market-overview {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  background: var(--zinc-900);
-  border-radius: 16px;
-  padding: 32px 40px;
-  margin-bottom: 40px;
-}
-.market-stat { text-align: center; }
-.market-stat-val {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: -.02em;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.market-stat-lbl {
-  font-size: 11px;
-  color: var(--zinc-500);
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  font-weight: 500;
-}
-.market-divider {
-  width: 1px;
-  height: 40px;
-  background: var(--zinc-700);
-}
+    <div class="table-section">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th style="width: 220px">Feature</th>
+            <th class="col-agent">
+              AgentDesk<br /><span class="win-badge">⚡ AI-first</span>
+            </th>
+            <th>HoneyBook</th>
+            <th>Dubsado</th>
+            <th>Bonsai</th>
+            <th>Plutio</th>
+            <th>17hats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- PRICING -->
+          <tr class="cat-row">
+            <td colspan="7">Pricing</td>
+          </tr>
+          <tr>
+            <td>Starting price</td>
+            <td class="col-agent price-cell">$19/mo</td>
+            <td class="price-cell">$36/mo</td>
+            <td class="price-cell">$35/mo</td>
+            <td class="price-cell">$19/mo</td>
+            <td class="price-cell">$19/mo</td>
+            <td class="price-cell">$45/mo</td>
+          </tr>
+          <tr>
+            <td>Free trial</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">14 days · no card</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">7 days only</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">No trial</span>
+            </td>
+            <td>
+              <span class="check">✓</span><span class="cell-note">7 days</span>
+            </td>
+            <td>
+              <span class="check">✓</span><span class="cell-note">7 days</span>
+            </td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">Annual only</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Credit card required for trial</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">No card needed</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">No card needed</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">No trial at all</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">Card required</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">Card required</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">Card required</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Available globally (incl. Pakistan, India)</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">Worldwide</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">US &amp; Canada only</span>
+            </td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Transaction fees</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">None (LemonSqueezy)</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">2.9% + $0.25/card</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">~3% Stripe fees</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">Extra above Stripe</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">None extra</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">Stripe fees</span>
+            </td>
+          </tr>
 
-/* ── REVENUE CARDS ── */
-.rev-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 16px;
-  margin-bottom: 32px;
-}
-.rev-card {
-  border: 1px solid var(--zinc-200);
-  border-radius: 16px;
-  padding: 24px;
-  background: var(--white);
-  transition: box-shadow .15s;
-}
-.rev-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.06); }
-.rev-card-top { border-top: 3px solid var(--rose); }
-.rev-card-agent {
-  background: var(--zinc-900);
-  border-color: var(--indigo);
-  border-top: 3px solid var(--indigo);
-}
+          <!-- AI & AGENTS -->
+          <tr class="cat-row">
+            <td colspan="7">AI & Automation</td>
+          </tr>
+          <tr>
+            <td>Autonomous AI agents</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">6 full agents</span>
+            </td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Human-in-loop approval</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">Every agent action</span>
+            </td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>AI lead scoring (0–100)</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">4-dimension fit score</span>
+            </td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>AI proposal writing</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">3-tier proposals from call notes</span>
+            </td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">AI drafts only</span>
+            </td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Call transcript → requirements</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">Paste transcript, AI extracts all</span>
+            </td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">Meeting notes only</span>
+            </td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>AI invoice generation from time logs</td>
+            <td class="col-agent"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>AI case study + LinkedIn post generator</td>
+            <td class="col-agent"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Scope creep detection</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">Auto-flagged by PM agent</span>
+            </td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Rules-based automation</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">+AI agents on top</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">Essentials+ only</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">Premier only</span>
+            </td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">Basic triggers</span>
+            </td>
+            <td><span class="check">✓</span></td>
+            <td><span class="partial">~</span></td>
+          </tr>
 
-.rev-card-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-.rev-logo {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  flex-shrink: 0;
-}
-.hb { background: #FFF7ED; }
-.db { background: #EFF6FF; }
-.bn { background: #ECFDF5; }
-.pl { background: #EEF2FF; }
-.sh { background: #FFF1F2; }
-.ag { background: rgba(79,70,229,.2); }
+          <!-- CORE FEATURES -->
+          <tr class="cat-row">
+            <td colspan="7">Core Features</td>
+          </tr>
+          <tr>
+            <td>Client management (CRM)</td>
+            <td class="col-agent"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Proposals</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">3 tiers, AI-generated</span>
+            </td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Contracts / e-signatures</td>
+            <td class="col-agent">
+              <span class="partial">~</span
+              ><span class="cell-note">Roadmap (Q3 2026)</span>
+            </td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Invoicing</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">AI-generated from time logs</span>
+            </td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Project management</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">AI milestone planning</span>
+            </td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">Basic only</span>
+            </td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">Kanban, no Gantt</span>
+            </td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">Gantt on Premium</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">Strong PM</span>
+            </td>
+            <td><span class="partial">~</span></td>
+          </tr>
+          <tr>
+            <td>Time tracking</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">Feeds into invoices</span>
+            </td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="partial">~</span></td>
+          </tr>
+          <tr>
+            <td>Client portal</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">White-label, no login needed</span>
+            </td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">Limited</span>
+            </td>
+            <td><span class="check">✓</span></td>
+            <td><span class="partial">~</span></td>
+          </tr>
+          <tr>
+            <td>Scheduling / Calendly integration</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">Calendly OAuth integration</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">Built-in scheduler</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">Premier only</span>
+            </td>
+            <td><span class="partial">~</span></td>
+            <td><span class="partial">~</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
 
-.rev-name { font-size: 15px; font-weight: 700; }
-.rev-card-agent .rev-name { color: var(--white); }
-.rev-founded { font-size: 11px; color: var(--zinc-400); margin-top: 2px; }
+          <!-- EXPERIENCE -->
+          <tr class="cat-row">
+            <td colspan="7">User Experience</td>
+          </tr>
+          <tr>
+            <td>Setup time</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">1–2 hrs (5-step wizard)</span>
+            </td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">2–4 hrs</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">15–25 hrs (complex)</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">~1 hr (templates)</span>
+            </td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">3–5 hrs</span>
+            </td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">3–6 hrs</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Mobile experience</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">Mobile-first client portal</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">iOS &amp; Android app</span>
+            </td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">Mobile-responsive only</span>
+            </td>
+            <td><span class="check">✓</span></td>
+            <td><span class="partial">~</span></td>
+            <td><span class="partial">~</span></td>
+          </tr>
+          <tr>
+            <td>Modern UI / UX</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">Clean, Linear-inspired</span>
+            </td>
+            <td><span class="check">✓</span></td>
+            <td>
+              <span class="partial">~</span
+              ><span class="cell-note">Better in 3.0</span>
+            </td>
+            <td><span class="check">✓</span></td>
+            <td><span class="partial">~</span></td>
+            <td>
+              <span class="cross">✗</span><span class="cell-note">Dated</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Ownership stability</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">Independent, founder-led</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">VC-backed</span>
+            </td>
+            <td>
+              <span class="check">✓</span
+              ><span class="cell-note">Independent</span>
+            </td>
+            <td>
+              <span class="cross">✗</span
+              ><span class="cell-note">Acquired by Zoom (Dec 2025)</span>
+            </td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
 
-.rev-badge {
-  margin-left: auto;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 9px;
-  border-radius: 99px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.badge-danger { background: var(--rose-l); color: #BE123C; }
-.badge-warning { background: var(--amber-l); color: #92400E; }
-.badge-neutral { background: var(--zinc-100); color: var(--zinc-700); }
-.badge-indigo { background: rgba(79,70,229,.2); color: #818CF8; }
+          <!-- UNIQUE TO AGENTDESK -->
+          <tr class="cat-row">
+            <td colspan="7">Only in AgentDesk</td>
+          </tr>
+          <tr>
+            <td>AI outreach drafting after lead scoring</td>
+            <td class="col-agent"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Post-project automation sequence</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note"
+                >Case study + LinkedIn + testimonial</span
+              >
+            </td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Full freelance lifecycle in one AI loop</td>
+            <td class="col-agent">
+              <span class="check">✓</span
+              ><span class="cell-note">Lead → invoice → case study</span>
+            </td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>Weekly AI-generated client updates</td>
+            <td class="col-agent"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-.rev-metrics {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-.rev-metric {
-  background: var(--zinc-50);
-  border-radius: 10px;
-  padding: 12px 14px;
-}
-.rev-metric-agent {
-  background: rgba(255,255,255,.07);
-}
-.rev-metric-val {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: -.02em;
-  color: var(--text);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.rev-card-agent .rev-metric-val { color: var(--white); }
-.rev-metric-lbl {
-  font-size: 11px;
-  color: var(--zinc-500);
-  font-weight: 500;
-}
+    <!-- PRICING COMPARISON -->
+    <div class="sec-header">
+      <h2>Real cost comparison</h2>
+      <p>
+        What you actually pay for comparable features. Prices verified June
+        2026.
+      </p>
+    </div>
 
-.rev-insight {
-  display: flex;
-  gap: 10px;
-  padding: 12px 14px;
-  background: var(--zinc-50);
-  border-radius: 10px;
-  font-size: 12.5px;
-  color: var(--text-sub);
-  line-height: 1.55;
-  margin-bottom: 10px;
-}
-.rev-insight-agent {
-  background: rgba(255,255,255,.07);
-  color: rgba(255,255,255,.7);
-}
-.insight-icon { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
-.rev-source {
-  font-size: 10.5px;
-  color: var(--zinc-400);
-  font-style: italic;
-}
+    <div class="pricing-section">
+      <div class="pricing-cards">
+        <div class="price-card winner">
+          <div class="price-brand">AgentDesk</div>
+          <div class="price-amount">$19</div>
+          <div class="price-per">/month · Starter</div>
+          <div class="price-bullet">30 AI agent runs</div>
+          <div class="price-bullet">6 autonomous agents</div>
+          <div class="price-bullet">Client portal included</div>
+          <div class="price-bullet">Global (all countries)</div>
+          <div class="price-bullet">14-day trial, no card</div>
+          <div class="price-verdict verdict-best">Best value</div>
+        </div>
 
-/* ── OPPORTUNITY BOX ── */
-.opportunity-box {
-  background: linear-gradient(135deg, #312E81 0%, #4F46E5 50%, #7C3AED 100%);
-  border-radius: 20px;
-  padding: 40px 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.opp-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: #A5B4FC;
-  margin-bottom: 12px;
-}
-.opp-headline {
-  font-size: clamp(16px, 2.2vw, 22px);
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1.4;
-  letter-spacing: -.02em;
-}
-.opp-right { flex-shrink: 0; }
-.opp-stat-row {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-.opp-stat { text-align: center; }
-.opp-stat-val {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: -.02em;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.opp-stat-lbl {
-  font-size: 11px;
-  color: rgba(255,255,255,.6);
-  max-width: 120px;
-  line-height: 1.4;
-}
-@media (max-width:640px) {
-  .market-overview { padding: 24px 20px; }
-  .market-divider { display: none; }
-  .opportunity-box { padding: 28px 24px; flex-direction: column; }
-  .opp-stat-row { justify-content: center; }
-}
-</style>
+        <div class="price-card">
+          <div class="price-brand">HoneyBook</div>
+          <div class="price-amount">$36</div>
+          <div class="price-per">/month · Starter</div>
+          <div class="price-bullet">No AI agents</div>
+          <div class="price-bullet">Basic automations</div>
+          <div class="price-bullet">US &amp; Canada only</div>
+          <div class="price-bullet">+2.9% transaction fee</div>
+          <div class="price-bullet">7-day trial only</div>
+          <div class="price-verdict verdict-bad">89% price hike</div>
+        </div>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 2026 <strong>AgentDesk</strong> · agentdeskhub.com · Pricing data verified June 2026 from official product pages and G2/Capterra reviews.</p>
-  <p style="margin-top:6px">HoneyBook, Dubsado, Bonsai, Plutio, and 17hats are trademarks of their respective owners.</p>
-</footer>
+        <div class="price-card">
+          <div class="price-brand">Dubsado</div>
+          <div class="price-amount">$35</div>
+          <div class="price-per">/month · Starter</div>
+          <div class="price-bullet">No automations</div>
+          <div class="price-bullet">15–25 hrs setup</div>
+          <div class="price-bullet">No AI agents</div>
+          <div class="price-bullet">No free trial</div>
+          <div class="price-bullet">Premier $55/mo for automation</div>
+          <div class="price-verdict verdict-bad">Worst value</div>
+        </div>
 
-</body>
+        <div class="price-card">
+          <div class="price-brand">Bonsai</div>
+          <div class="price-amount">$19</div>
+          <div class="price-per">/user/month · Essentials</div>
+          <div class="price-bullet">No AI agents</div>
+          <div class="price-bullet">Acquired by Zoom</div>
+          <div class="price-bullet">Per-user pricing scales up</div>
+          <div class="price-bullet">Extra Stripe fees</div>
+          <div class="price-bullet">Product direction uncertain</div>
+          <div class="price-verdict verdict-ok">Unstable ownership</div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-brand">Plutio</div>
+          <div class="price-amount">$19</div>
+          <div class="price-per">/month · Core</div>
+          <div class="price-bullet">No AI agents</div>
+          <div class="price-bullet">9-client cap on Core</div>
+          <div class="price-bullet">Good project management</div>
+          <div class="price-bullet">Pro $49/mo for full access</div>
+          <div class="price-bullet">No global presence</div>
+          <div class="price-verdict verdict-ok">OK for PM, weak on AI</div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-brand">17hats</div>
+          <div class="price-amount">$45</div>
+          <div class="price-per">/month</div>
+          <div class="price-bullet">No AI agents</div>
+          <div class="price-bullet">Outdated interface</div>
+          <div class="price-bullet">Most expensive entry point</div>
+          <div class="price-bullet">Annual billing required</div>
+          <div class="price-bullet">No modern AI features</div>
+          <div class="price-verdict verdict-bad">Overpriced &amp; dated</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY US SECTION -->
+    <section class="why-section">
+      <h2>Why freelancers choose AgentDesk</h2>
+      <p class="sub">Six reasons no competitor can match.</p>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🤖</div>
+          <h3>The only product with real AI agents</h3>
+          <p>
+            Every competitor offers <strong>rules-based automation</strong> —
+            you configure triggers, they fire. AgentDesk has six autonomous AI
+            agents that actually do the work: research leads, write proposals,
+            draft emails, generate invoices. You review and approve. That's the
+            entire difference.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">🔁</div>
+          <h3>The complete freelance lifecycle, automated</h3>
+          <p>
+            HoneyBook handles onboarding. Dubsado handles forms. Bonsai handles
+            invoices. <strong>AgentDesk handles all of it</strong> — from the
+            moment a lead is found to the case study published after the project
+            closes. One tool. One AI brain. Zero context switching.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">✅</div>
+          <h3>Human-in-loop by design</h3>
+          <p>
+            Every agent action shows you
+            <strong>exactly what it did and what it plans to send</strong> —
+            before anything happens. Approve, edit, or reject in one click.
+            You're always in control. The AI does the work, you make the call.
+            No surprises, no accidental emails.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">🌍</div>
+          <h3>Built for global freelancers</h3>
+          <p>
+            HoneyBook is <strong>US and Canada only</strong>. AgentDesk works
+            everywhere from day one — Pakistan, India, UK, Nigeria, Brazil.
+            Payments via LemonSqueezy (works in 140+ countries). No geographic
+            walls on who can run their business with AI.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">💸</div>
+          <h3>Half the price of HoneyBook, 10× the AI</h3>
+          <p>
+            HoneyBook raised prices <strong>89% in 2025</strong>. Their Starter
+            is now $36/month with zero AI agents. AgentDesk Starter is $19/month
+            with six AI agents, a client portal, time logging, and a 14-day free
+            trial. More product. Lower price. No transaction fees.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">🚀</div>
+          <h3>Ready in 2 hours, not 25</h3>
+          <p>
+            Dubsado is notoriously hard to set up — an
+            <strong>entire industry of paid setup specialists</strong> exists
+            for it. AgentDesk has a 5-step guided wizard. Your AI Profile trains
+            all six agents in one sitting. First lead scored and first proposal
+            drafted before the end of day one.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MIGRATION BANNER -->
+    <div style="padding: 64px 24px 24px; max-width: 1160px; margin: 0 auto">
+      <div class="migration-banner">
+        <div class="migration-text">
+          <h3>Coming from HoneyBook?<br />You're not alone.</h3>
+          <p>
+            Thousands of freelancers are leaving after the 89% price hike.
+            AgentDesk imports your clients and proposals — and adds six AI
+            agents on top. 14 days free, no card required.
+          </p>
+        </div>
+        <a href="https://agentdeskhub.com/signup" class="migration-cta"
+          >Start free trial →</a
+        >
+      </div>
+    </div>
+
+    <!-- MARKET INTELLIGENCE SECTION -->
+    <div class="sec-header" style="padding-top: 72px">
+      <h2>Market size &amp; competitor revenue</h2>
+      <p>Where the money is — and where the opportunity is wide open.</p>
+    </div>
+
+    <div class="market-section">
+      <!-- MARKET OVERVIEW BAR -->
+      <div class="market-overview">
+        <div class="market-stat">
+          <div class="market-stat-val">$7.84B</div>
+          <div class="market-stat-lbl">Agentic AI market 2025</div>
+        </div>
+        <div class="market-divider"></div>
+        <div class="market-stat">
+          <div class="market-stat-val">$52.6B</div>
+          <div class="market-stat-lbl">Projected by 2030</div>
+        </div>
+        <div class="market-divider"></div>
+        <div class="market-stat">
+          <div class="market-stat-val">46.3%</div>
+          <div class="market-stat-lbl">CAGR growth rate</div>
+        </div>
+        <div class="market-divider"></div>
+        <div class="market-stat">
+          <div class="market-stat-val">73M+</div>
+          <div class="market-stat-lbl">Freelancers in the US alone</div>
+        </div>
+        <div class="market-divider"></div>
+        <div class="market-stat">
+          <div class="market-stat-val">0</div>
+          <div class="market-stat-lbl">Competitors with true AI agents</div>
+        </div>
+      </div>
+
+      <!-- COMPETITOR REVENUE CARDS -->
+      <div class="rev-grid">
+        <!-- HoneyBook -->
+        <div class="rev-card rev-card-top">
+          <div class="rev-card-header">
+            <div class="rev-logo hb">🍯</div>
+            <div>
+              <div class="rev-name">HoneyBook</div>
+              <div class="rev-founded">
+                Founded 2013 · VC-backed · $498M raised
+              </div>
+            </div>
+            <div class="rev-badge badge-danger">89% price hike</div>
+          </div>
+          <div class="rev-metrics">
+            <div class="rev-metric">
+              <div class="rev-metric-val">$140M</div>
+              <div class="rev-metric-lbl">ARR (March 2025)</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">~100K</div>
+              <div class="rev-metric-lbl">Paying customers</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">$2.4B</div>
+              <div class="rev-metric-lbl">Valuation (2021)</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">12%</div>
+              <div class="rev-metric-lbl">YoY growth (slowing)</div>
+            </div>
+          </div>
+          <div class="rev-insight">
+            <span class="insight-icon">💡</span>
+            <span
+              >The biggest fish — but US/Canada only and just hiked prices 89%.
+              Every frustrated HoneyBook user is a warm lead for AgentDesk. They
+              collected $18B in transactions, proving massive willingness to pay
+              in this market.</span
+            >
+          </div>
+          <div class="rev-source">
+            Source: Sacra research · TechCrunch March 2025 · Getlatka 2026
+          </div>
+        </div>
+
+        <!-- Dubsado -->
+        <div class="rev-card">
+          <div class="rev-card-header">
+            <div class="rev-logo db">📋</div>
+            <div>
+              <div class="rev-name">Dubsado</div>
+              <div class="rev-founded">
+                Founded 2015 · Bootstrapped · 51 employees
+              </div>
+            </div>
+            <div class="rev-badge badge-warning">Bootstrapped</div>
+          </div>
+          <div class="rev-metrics">
+            <div class="rev-metric">
+              <div class="rev-metric-val">~$2.5M</div>
+              <div class="rev-metric-lbl">Est. ARR</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">~7K–10K</div>
+              <div class="rev-metric-lbl">Est. paying users</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">$1.5B</div>
+              <div class="rev-metric-lbl">Payments processed (2025)</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">583K</div>
+              <div class="rev-metric-lbl">Projects completed (2025)</div>
+            </div>
+          </div>
+          <div class="rev-insight">
+            <span class="insight-icon">💡</span>
+            <span
+              >Completely bootstrapped — a small company punching above its
+              weight. Strong in the photography/wedding niche (38% market
+              share). Their v3.0 rebuild + December 2025 price hike is causing
+              churn among users who don't need the complexity.</span
+            >
+          </div>
+          <div class="rev-source">
+            Source: Getlatka · Owler · Dubsado 2025 Year in Review blog
+          </div>
+        </div>
+
+        <!-- Bonsai -->
+        <div class="rev-card">
+          <div class="rev-card-header">
+            <div class="rev-logo bn">🌿</div>
+            <div>
+              <div class="rev-name">Bonsai</div>
+              <div class="rev-founded">
+                Founded 2016 · Acquired by Zoom Dec 2025
+              </div>
+            </div>
+            <div class="rev-badge badge-warning">Zoom owned</div>
+          </div>
+          <div class="rev-metrics">
+            <div class="rev-metric">
+              <div class="rev-metric-val">~$10M</div>
+              <div class="rev-metric-lbl">Est. ARR</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">~30K–50K</div>
+              <div class="rev-metric-lbl">Est. paying users</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">90%</div>
+              <div class="rev-metric-lbl">Subscriber retention rate</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">4.6★</div>
+              <div class="rev-metric-lbl">Capterra rating</div>
+            </div>
+          </div>
+          <div class="rev-insight">
+            <span class="insight-icon">💡</span>
+            <span
+              >Popular and well-loved — but the Zoom acquisition creates
+              uncertainty. Users loyal to "indie Bonsai" are already looking for
+              alternatives. Strong on simplicity, weak on AI, weak on project
+              management depth.</span
+            >
+          </div>
+          <div class="rev-source">
+            Source: Capterra · Agiled comparison · SoftwareAdvice 2026
+          </div>
+        </div>
+
+        <!-- Plutio -->
+        <div class="rev-card">
+          <div class="rev-card-header">
+            <div class="rev-logo pl">🔷</div>
+            <div>
+              <div class="rev-name">Plutio</div>
+              <div class="rev-founded">
+                Founded 2017 · Bootstrapped · ~10 employees
+              </div>
+            </div>
+            <div class="rev-badge badge-neutral">Bootstrapped</div>
+          </div>
+          <div class="rev-metrics">
+            <div class="rev-metric">
+              <div class="rev-metric-val">~$1M</div>
+              <div class="rev-metric-lbl">Est. ARR</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">~3K–5K</div>
+              <div class="rev-metric-lbl">Est. paying users</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">4.6★</div>
+              <div class="rev-metric-lbl">G2 rating</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">$19/mo</div>
+              <div class="rev-metric-lbl">Entry price (9-client cap)</div>
+            </div>
+          </div>
+          <div class="rev-insight">
+            <span class="insight-icon">💡</span>
+            <span
+              >Small but solid. Best project management of the group. The
+              9-client cap on Core forces users to $49/mo Pro earlier than
+              expected. No meaningful AI investment. Ideal for agencies,
+              underserves solo freelancers.</span
+            >
+          </div>
+          <div class="rev-source">
+            Source: G2 · Plutio pricing page · Agiled comparison 2026
+          </div>
+        </div>
+
+        <!-- 17hats -->
+        <div class="rev-card">
+          <div class="rev-card-header">
+            <div class="rev-logo sh">🏷️</div>
+            <div>
+              <div class="rev-name">17hats</div>
+              <div class="rev-founded">
+                Founded 2013 · Bootstrapped · dated platform
+              </div>
+            </div>
+            <div class="rev-badge badge-danger">Declining</div>
+          </div>
+          <div class="rev-metrics">
+            <div class="rev-metric">
+              <div class="rev-metric-val">~$5M</div>
+              <div class="rev-metric-lbl">Est. ARR</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">~10K</div>
+              <div class="rev-metric-lbl">Est. paying users</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">$45/mo</div>
+              <div class="rev-metric-lbl">Starting price (highest)</div>
+            </div>
+            <div class="rev-metric">
+              <div class="rev-metric-val">4.3★</div>
+              <div class="rev-metric-lbl">G2 rating (100+ reviews)</div>
+            </div>
+          </div>
+          <div class="rev-insight">
+            <span class="insight-icon">💡</span>
+            <span
+              >The oldest platform in the list — and it shows. "Documents look
+              like 2015" is a real G2 complaint. Most expensive entry price with
+              the least modern feature set. Users who need AI are already
+              leaving.</span
+            >
+          </div>
+          <div class="rev-source">
+            Source: Plutio comparison · G2 reviews · Capterra 2026
+          </div>
+        </div>
+
+        <!-- AgentDesk -->
+        <div class="rev-card rev-card-agent">
+          <div class="rev-card-header">
+            <div class="rev-logo ag">🤖</div>
+            <div>
+              <div class="rev-name">AgentDesk</div>
+              <div class="rev-founded">
+                Launching 2026 · Solo founder · $0 raised
+              </div>
+            </div>
+            <div class="rev-badge badge-indigo">AI-first</div>
+          </div>
+          <div class="rev-metrics">
+            <div class="rev-metric rev-metric-agent">
+              <div class="rev-metric-val">$0 → $10K</div>
+              <div class="rev-metric-lbl">MRR target by month 12</div>
+            </div>
+            <div class="rev-metric rev-metric-agent">
+              <div class="rev-metric-val">~250</div>
+              <div class="rev-metric-lbl">Paying users to hit $10K MRR</div>
+            </div>
+            <div class="rev-metric rev-metric-agent">
+              <div class="rev-metric-val">8–14</div>
+              <div class="rev-metric-lbl">Users to break even</div>
+            </div>
+            <div class="rev-metric rev-metric-agent">
+              <div class="rev-metric-val">$19–79</div>
+              <div class="rev-metric-lbl">Pricing range/mo</div>
+            </div>
+          </div>
+          <div class="rev-insight rev-insight-agent">
+            <span class="insight-icon">🚀</span>
+            <span
+              >The only new entrant with true AI agents. Targeting the 100,000+
+              users frustrated with HoneyBook's price hike and Bonsai's Zoom
+              acquisition. Don't need to win the whole market — capturing 0.25%
+              of HoneyBook's user base equals $350K ARR.</span
+            >
+          </div>
+          <div class="rev-source" style="color: rgba(255, 255, 255, 0.4)">
+            Internal projections based on market data · June 2026
+          </div>
+        </div>
+      </div>
+
+      <!-- OPPORTUNITY CALLOUT -->
+      <div class="opportunity-box">
+        <div class="opp-left">
+          <div class="opp-label">THE OPPORTUNITY IN ONE SENTENCE</div>
+          <div class="opp-headline">
+            HoneyBook has 100K users paying $36–129/mo with no AI agents.<br />AgentDesk
+            offers AI agents starting at $19/mo.
+          </div>
+        </div>
+        <div class="opp-right">
+          <div class="opp-stat-row">
+            <div class="opp-stat">
+              <div class="opp-stat-val">0.1%</div>
+              <div class="opp-stat-lbl">
+                of HoneyBook's users = 100 paying customers
+              </div>
+            </div>
+            <div class="opp-stat">
+              <div class="opp-stat-val">$39K</div>
+              <div class="opp-stat-lbl">MRR at avg $39/user</div>
+            </div>
+            <div class="opp-stat">
+              <div class="opp-stat-val">$468K</div>
+              <div class="opp-stat-lbl">ARR from 0.1% of one competitor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      /* ── MARKET SECTION ── */
+      .market-section {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 24px 72px;
+      }
+      .market-overview {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+        background: var(--zinc-900);
+        border-radius: 16px;
+        padding: 32px 40px;
+        margin-bottom: 40px;
+      }
+      .market-stat {
+        text-align: center;
+      }
+      .market-stat-val {
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--white);
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .market-stat-lbl {
+        font-size: 11px;
+        color: var(--zinc-500);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-weight: 500;
+      }
+      .market-divider {
+        width: 1px;
+        height: 40px;
+        background: var(--zinc-700);
+      }
+
+      /* ── REVENUE CARDS ── */
+      .rev-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      .rev-card {
+        border: 1px solid var(--zinc-200);
+        border-radius: 16px;
+        padding: 24px;
+        background: var(--white);
+        transition: box-shadow 0.15s;
+      }
+      .rev-card:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      }
+      .rev-card-top {
+        border-top: 3px solid var(--rose);
+      }
+      .rev-card-agent {
+        background: var(--zinc-900);
+        border-color: var(--indigo);
+        border-top: 3px solid var(--indigo);
+      }
+
+      .rev-card-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .rev-logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        flex-shrink: 0;
+      }
+      .hb {
+        background: #fff7ed;
+      }
+      .db {
+        background: #eff6ff;
+      }
+      .bn {
+        background: #ecfdf5;
+      }
+      .pl {
+        background: #eef2ff;
+      }
+      .sh {
+        background: #fff1f2;
+      }
+      .ag {
+        background: rgba(79, 70, 229, 0.2);
+      }
+
+      .rev-name {
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .rev-card-agent .rev-name {
+        color: var(--white);
+      }
+      .rev-founded {
+        font-size: 11px;
+        color: var(--zinc-400);
+        margin-top: 2px;
+      }
+
+      .rev-badge {
+        margin-left: auto;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 9px;
+        border-radius: 99px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .badge-danger {
+        background: var(--rose-l);
+        color: #be123c;
+      }
+      .badge-warning {
+        background: var(--amber-l);
+        color: #92400e;
+      }
+      .badge-neutral {
+        background: var(--zinc-100);
+        color: var(--zinc-700);
+      }
+      .badge-indigo {
+        background: rgba(79, 70, 229, 0.2);
+        color: #818cf8;
+      }
+
+      .rev-metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .rev-metric {
+        background: var(--zinc-50);
+        border-radius: 10px;
+        padding: 12px 14px;
+      }
+      .rev-metric-agent {
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .rev-metric-val {
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+      .rev-card-agent .rev-metric-val {
+        color: var(--white);
+      }
+      .rev-metric-lbl {
+        font-size: 11px;
+        color: var(--zinc-500);
+        font-weight: 500;
+      }
+
+      .rev-insight {
+        display: flex;
+        gap: 10px;
+        padding: 12px 14px;
+        background: var(--zinc-50);
+        border-radius: 10px;
+        font-size: 12.5px;
+        color: var(--text-sub);
+        line-height: 1.55;
+        margin-bottom: 10px;
+      }
+      .rev-insight-agent {
+        background: rgba(255, 255, 255, 0.07);
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .insight-icon {
+        flex-shrink: 0;
+        font-size: 14px;
+        margin-top: 1px;
+      }
+      .rev-source {
+        font-size: 10.5px;
+        color: var(--zinc-400);
+        font-style: italic;
+      }
+
+      /* ── OPPORTUNITY BOX ── */
+      .opportunity-box {
+        background: linear-gradient(
+          135deg,
+          #312e81 0%,
+          #4f46e5 50%,
+          #7c3aed 100%
+        );
+        border-radius: 20px;
+        padding: 40px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      .opp-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #a5b4fc;
+        margin-bottom: 12px;
+      }
+      .opp-headline {
+        font-size: clamp(16px, 2.2vw, 22px);
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.4;
+        letter-spacing: -0.02em;
+      }
+      .opp-right {
+        flex-shrink: 0;
+      }
+      .opp-stat-row {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+      .opp-stat {
+        text-align: center;
+      }
+      .opp-stat-val {
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--white);
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .opp-stat-lbl {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 120px;
+        line-height: 1.4;
+      }
+      @media (max-width: 640px) {
+        .market-overview {
+          padding: 24px 20px;
+        }
+        .market-divider {
+          display: none;
+        }
+        .opportunity-box {
+          padding: 28px 24px;
+          flex-direction: column;
+        }
+        .opp-stat-row {
+          justify-content: center;
+        }
+      }
+    </style>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>
+        © 2026 <strong>AgentDesk</strong> · agentdeskhub.com · Pricing data
+        verified June 2026 from official product pages and G2/Capterra reviews.
+      </p>
+      <p style="margin-top: 6px">
+        HoneyBook, Dubsado, Bonsai, Plutio, and 17hats are trademarks of their
+        respective owners.
+      </p>
+    </footer>
+  </body>
 </html>

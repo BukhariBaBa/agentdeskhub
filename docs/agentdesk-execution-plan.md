@@ -1,20 +1,21 @@
 # AgentDesk — Complete Execution Plan
+
 **Solo founder build plan | 12 weeks to launch + growth**
 
 ---
 
 ## Quick Reference
 
-| Item | Detail |
-|---|---|
-| Product | AgentDesk — AI-powered freelance OS |
-| Domain | agentdeskhub.com |
-| Stack | Next.js 14, Supabase, Drizzle, BullMQ, Anthropic SDK |
-| Payments | LemonSqueezy |
-| Hosting | Vercel |
-| Launch target | Week 5 (ProductHunt) |
-| Breakeven | 8–14 paying users |
-| Month 6 target | $3,500 MRR (personal breakeven) |
+| Item           | Detail                                               |
+| -------------- | ---------------------------------------------------- |
+| Product        | AgentDesk — AI-powered freelance OS                  |
+| Domain         | agentdeskhub.com                                     |
+| Stack          | Next.js 14, Supabase, Drizzle, BullMQ, Anthropic SDK |
+| Payments       | LemonSqueezy                                         |
+| Hosting        | Vercel                                               |
+| Launch target  | Week 5 (ProductHunt)                                 |
+| Breakeven      | 8–14 paying users                                    |
+| Month 6 target | $3,500 MRR (personal breakeven)                      |
 
 ---
 
@@ -432,7 +433,7 @@ Day 4 — SEO landing pages
 Day 5 — Revenue push
 □ Target: $300 MRR this week
 □ Personal outreach to 50 freelancers total
-□ Offer: "I'll personally onboard you and give you 1 month free if you 
+□ Offer: "I'll personally onboard you and give you 1 month free if you
     give me honest feedback"
 □ Fix top 3 bugs from user feedback
 ```
@@ -541,13 +542,13 @@ Day 5-6 — Month 3 retrospective
 
 ## MRR Milestones Tracker
 
-| Month | Target | Status |
-|---|---|---|
-| Month 1 | First paying user | — |
-| Month 2 | $300 MRR | — |
-| Month 4 | $2,000 MRR | — |
-| Month 6 | $3,500 MRR | — |
-| Month 12 | $10,000 MRR | — |
+| Month    | Target            | Status |
+| -------- | ----------------- | ------ |
+| Month 1  | First paying user | —      |
+| Month 2  | $300 MRR          | —      |
+| Month 4  | $2,000 MRR        | —      |
+| Month 6  | $3,500 MRR        | —      |
+| Month 12 | $10,000 MRR       | —      |
 
 ---
 
@@ -581,6 +582,7 @@ Create these files in `/lib/agents/`:
 ```
 
 Each agent file exports:
+
 ```typescript
 export const agentConfig = {
   name: string
@@ -704,21 +706,22 @@ agentdesk/
 
 ## Risk Register
 
-| Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
-| Anthropic API outage | Low | High | Graceful error in approval UI, retry queue |
-| LemonSqueezy payment failure | Low | High | Webhook idempotency, manual override in admin |
-| BullMQ job stuck | Medium | Medium | 5-min timeout, dead letter queue, Sentry alert |
-| Supabase RLS misconfiguration | Medium | High | Test RLS policies before launch, separate test workspace |
-| Trial abuse (fake accounts) | Medium | Low | Email verification required, monitor in admin |
-| Low ProductHunt conversion | Medium | Medium | Pre-warm 50 DMs before launch, have fallback (Reddit, IndieHackers) |
-| Scope creep (feature requests) | High | Medium | Stick to plan. New features go in a backlog, not current sprint |
+| Risk                           | Likelihood | Impact | Mitigation                                                          |
+| ------------------------------ | ---------- | ------ | ------------------------------------------------------------------- |
+| Anthropic API outage           | Low        | High   | Graceful error in approval UI, retry queue                          |
+| LemonSqueezy payment failure   | Low        | High   | Webhook idempotency, manual override in admin                       |
+| BullMQ job stuck               | Medium     | Medium | 5-min timeout, dead letter queue, Sentry alert                      |
+| Supabase RLS misconfiguration  | Medium     | High   | Test RLS policies before launch, separate test workspace            |
+| Trial abuse (fake accounts)    | Medium     | Low    | Email verification required, monitor in admin                       |
+| Low ProductHunt conversion     | Medium     | Medium | Pre-warm 50 DMs before launch, have fallback (Reddit, IndieHackers) |
+| Scope creep (feature requests) | High       | Medium | Stick to plan. New features go in a backlog, not current sprint     |
 
 ---
 
 ## Definition of Done (Per Feature)
 
 A feature is done when:
+
 - [ ] Works on production (not just local)
 - [ ] Error states handled (empty state, loading state, failure state)
 - [ ] RLS policies verified (one workspace can't access another's data)
