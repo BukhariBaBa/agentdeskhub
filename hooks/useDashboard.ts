@@ -8,6 +8,7 @@ import {
   MOCK_ACTIVITY,
   MOCK_WORKSPACE,
   MOCK_USAGE,
+  MOCK_COMPLETIONS,
 } from "@/lib/mock";
 import { money } from "@/lib/utils";
 import {
@@ -155,6 +156,7 @@ export function useDashboard() {
     metrics,
     approvals: MOCK_APPROVALS,
     activity: MOCK_ACTIVITY,
+    completions: MOCK_COMPLETIONS,
     workspace: MOCK_WORKSPACE,
     usage: MOCK_USAGE,
   };

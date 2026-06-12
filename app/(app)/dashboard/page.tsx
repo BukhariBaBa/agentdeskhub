@@ -3,7 +3,8 @@ import { useDashboard } from "@/hooks/useDashboard";
 import { DashboardView } from "@/components/dashboard/DashboardView";
 
 export default function DashboardPage() {
-  const { greeting, firstName, metrics, approvals, activity } = useDashboard();
+  const { greeting, firstName, metrics, approvals, activity, completions } =
+    useDashboard();
 
   return (
     <DashboardView
@@ -12,6 +13,7 @@ export default function DashboardPage() {
       metrics={metrics}
       approvals={approvals}
       activity={activity}
+      completions={completions}
     />
   );
 }

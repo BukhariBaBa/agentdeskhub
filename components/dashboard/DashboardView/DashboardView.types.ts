@@ -1,4 +1,4 @@
-import type { MockApproval, MockActivity } from "@/lib/mock";
+import type { MockApproval, MockActivity, MockCompletion } from "@/lib/mock";
 
 export type DashboardMetric = {
   label: string;
@@ -15,4 +15,5 @@ export type DashboardViewProps = {
   metrics: DashboardMetric[];
   approvals: MockApproval[];
   activity: MockActivity[];
+  completions: MockCompletion[];
 };

@@ -5,6 +5,7 @@ import { EmptyState } from "@/components/common/EmptyState";
 import { MetricCard } from "@/components/dashboard/MetricCard";
 import { ApprovalCard } from "@/components/dashboard/ApprovalCard";
 import { ActivityRow } from "@/components/dashboard/ActivityRow";
+import { CompletionCard } from "@/components/dashboard/CompletionCard";
 import type { DashboardViewProps } from "./DashboardView.types";
 import type { IconName } from "@/components/common/Icon";
 import { ROUTES } from "@/lib/constants";
@@ -15,6 +16,7 @@ export function DashboardView({
   metrics,
   approvals,
   activity,
+  completions,
 }: DashboardViewProps) {
   const router = useRouter();
 
@@ -46,6 +48,15 @@ export function DashboardView({
           />
         ))}
       </div>
+
+      {/* Post-project automation */}
+      {completions.length > 0 && (
+        <div className="mb-[26px]">
+          {completions.map((c) => (
+            <CompletionCard key={c.id} completion={c} />
+          ))}
+        </div>
+      )}
 
       {/* Two-column: approvals + activity */}
       <div className="grid gap-[22px] items-start [grid-template-columns:1fr] lg:[grid-template-columns:minmax(0,1.6fr)_minmax(280px,1fr)]">

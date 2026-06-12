@@ -2,6 +2,7 @@ import type { StatusTint } from "./StatusBadge.types";
 
 export const STATUS_TINT_MAP: Record<string, StatusTint> = {
   "Needs review": "amber",
+  Ready: "amber",
   Lead: "amber",
   Active: "emerald",
   Past: "zinc",
