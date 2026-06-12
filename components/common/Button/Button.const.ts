@@ -1,64 +1,22 @@
 import type { ButtonSize, ButtonVariant } from "./Button.types";
 
-export const BUTTON_SIZES: Record<
-  ButtonSize,
-  { padding: string; fontSize: number; gap: number; h: number }
-> = {
-  sm: { padding: "5px 10px", fontSize: 12.5, gap: 5, h: 28 },
-  md: { padding: "7px 13px", fontSize: 13.5, gap: 6, h: 34 },
-  lg: { padding: "10px 18px", fontSize: 14.5, gap: 7, h: 42 },
+export const BUTTON_SIZE_CLASSES: Record<ButtonSize, string> = {
+  sm: "px-[10px] py-[5px] text-[12.5px] gap-[5px] min-h-[28px]",
+  md: "px-[13px] py-[7px] text-[13.5px] gap-[6px] min-h-[34px]",
+  lg: "px-[18px] py-[10px] text-[14.5px] gap-[7px] min-h-[42px]",
 };
 
-export const BUTTON_VARIANTS: Record<
-  ButtonVariant,
-  {
-    bg: string;
-    hoverBg: string;
-    color: string;
-    border: string;
-    hoverBorder: string;
-  }
-> = {
-  primary: {
-    bg: "var(--primary)",
-    hoverBg: "var(--primary-hover)",
-    color: "#fff",
-    border: "1px solid transparent",
-    hoverBorder: "1px solid transparent",
-  },
-  secondary: {
-    bg: "#fff",
-    hoverBg: "var(--zinc-50)",
-    color: "var(--zinc-800)",
-    border: "1px solid var(--border-strong)",
-    hoverBorder: "1px solid var(--border-strong)",
-  },
-  ghost: {
-    bg: "transparent",
-    hoverBg: "var(--zinc-100)",
-    color: "var(--zinc-600)",
-    border: "1px solid transparent",
-    hoverBorder: "1px solid transparent",
-  },
-  danger: {
-    bg: "transparent",
-    hoverBg: "var(--rose-50)",
-    color: "var(--rose-600)",
-    border: "1px solid transparent",
-    hoverBorder: "1px solid var(--rose-100)",
-  },
-  success: {
-    bg: "var(--emerald-500)",
-    hoverBg: "var(--emerald-600)",
-    color: "#fff",
-    border: "1px solid transparent",
-    hoverBorder: "1px solid transparent",
-  },
-  dangerSolid: {
-    bg: "var(--rose-500)",
-    hoverBg: "var(--rose-600)",
-    color: "#fff",
-    border: "1px solid transparent",
-    hoverBorder: "1px solid transparent",
-  },
+export const BUTTON_VARIANT_CLASSES: Record<ButtonVariant, string> = {
+  primary:
+    "bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white border border-transparent",
+  secondary:
+    "bg-white hover:bg-[var(--zinc-50)] text-[var(--zinc-800)] border border-[var(--border-strong)]",
+  ghost:
+    "bg-transparent hover:bg-[var(--zinc-100)] text-[var(--zinc-600)] border border-transparent",
+  danger:
+    "bg-transparent hover:bg-[var(--rose-50)] text-[var(--rose-600)] border border-transparent hover:border-[var(--rose-100)]",
+  success:
+    "bg-[var(--emerald-500)] hover:bg-[var(--emerald-600)] text-white border border-transparent",
+  dangerSolid:
+    "bg-[var(--rose-500)] hover:bg-[var(--rose-600)] text-white border border-transparent",
 };

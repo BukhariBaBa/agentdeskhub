@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import type { IconName } from "../Icon";
 
 export type ButtonVariant =
@@ -20,5 +19,5 @@ export type ButtonProps = {
   disabled?: boolean;
   full?: boolean;
   type?: "button" | "submit" | "reset";
-  style?: CSSProperties;
+  className?: string;
 };

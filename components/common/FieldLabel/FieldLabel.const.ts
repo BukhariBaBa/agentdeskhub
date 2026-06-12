@@ -1,7 +1,2 @@
-export const FIELD_LABEL_STYLE = {
-  display: "block",
-  fontSize: 12.5,
-  fontWeight: 600,
-  color: "var(--text)",
-  marginBottom: 7,
-} as const;
+export const FIELD_LABEL_CLASS =
+  "block text-[12.5px] font-semibold text-[var(--text)] mb-[7px]";

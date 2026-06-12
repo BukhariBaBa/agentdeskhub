@@ -6,62 +6,7 @@ import {
   PORTAL_STEP_TITLE,
   PORTAL_FEATURES,
 } from "./PortalStep.const";
-
-function StepShell({
-  eyebrow,
-  title,
-  sub,
-  children,
-}: {
-  eyebrow: string;
-  title: string;
-  sub?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div style={{ width: "100%", maxWidth: 520, margin: "0 auto" }}>
-      <div
-        style={{
-          fontSize: 12,
-          fontWeight: 650,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          color: "var(--indigo-600)",
-          marginBottom: 10,
-        }}
-      >
-        {eyebrow}
-      </div>
-      <h1
-        style={{
-          margin: 0,
-          fontSize: 27,
-          fontWeight: 680,
-          letterSpacing: "-0.03em",
-          color: "var(--text)",
-        }}
-      >
-        {title}
-      </h1>
-      {sub ? (
-        <p
-          style={{
-            margin: "9px 0 26px",
-            fontSize: 14.5,
-            color: "var(--text-muted)",
-            lineHeight: 1.55,
-            maxWidth: 540,
-          }}
-        >
-          {sub}
-        </p>
-      ) : (
-        <div style={{ height: 26 }} />
-      )}
-      {children}
-    </div>
-  );
-}
+import { StepShell } from "./StepShell";
 
 export function PortalStep({
   portalClient,
@@ -83,80 +28,25 @@ export function PortalStep({
       title={PORTAL_STEP_TITLE}
       sub={sub}
     >
-      <div
-        style={{
-          border: "1px solid var(--border)",
-          borderRadius: "var(--r-lg)",
-          background: "#fff",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            padding: "16px 18px",
-            borderBottom: "1px solid var(--border)",
-          }}
-        >
-          <span
-            style={{
-              width: 40,
-              height: 40,
-              borderRadius: "var(--r-md)",
-              background: "var(--indigo-600)",
-              color: "#fff",
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-              fontWeight: 700,
-              fontSize: 15,
-            }}
-          >
+      <div className="border border-[var(--border)] rounded-[var(--r-lg)] bg-white overflow-hidden">
+        <div className="flex items-center gap-3 px-[18px] py-4 border-b border-[var(--border)]">
+          <span className="w-[40px] h-[40px] rounded-[var(--r-md)] bg-[var(--indigo-600)] text-white inline-flex items-center justify-center shrink-0 font-bold text-[15px]">
             {clientInitials}
           </span>
-          <div style={{ minWidth: 0 }}>
-            <div style={{ fontSize: 14, fontWeight: 650 }}>
-              {portalClient.name}
-            </div>
-            <div style={{ fontSize: 12.5, color: "var(--text-muted)" }}>
+          <div className="min-w-0">
+            <div className="text-[14px] font-[650]">{portalClient.name}</div>
+            <div className="text-[12.5px] text-[var(--text-muted)]">
               {portalClient.company}
             </div>
           </div>
         </div>
 
-        <div style={{ padding: 18 }}>
-          <label
-            style={{
-              display: "block",
-              fontSize: 12.5,
-              fontWeight: 600,
-              color: "var(--text)",
-              marginBottom: 7,
-            }}
-          >
+        <div className="p-[18px]">
+          <label className="block text-[12.5px] font-semibold text-[var(--text)] mb-[7px]">
             Portal link
           </label>
-          <div style={{ display: "flex", gap: 8 }}>
-            <div
-              style={{
-                flex: 1,
-                display: "flex",
-                alignItems: "center",
-                padding: "9px 12px",
-                border: "1px solid var(--border-strong)",
-                borderRadius: "var(--r-md)",
-                background: "var(--bg-subtle)",
-                fontFamily: "var(--mono)",
-                fontSize: 12.5,
-                color: "var(--text-muted)",
-                overflow: "hidden",
-                whiteSpace: "nowrap",
-                textOverflow: "ellipsis",
-              }}
-            >
+          <div className="flex gap-2">
+            <div className="flex-1 flex items-center px-3 py-[9px] border border-[var(--border-strong)] rounded-[var(--r-md)] bg-[var(--bg-subtle)] font-[var(--mono)] text-[12.5px] text-[var(--text-muted)] overflow-hidden whitespace-nowrap text-ellipsis">
               {portalUrl}
             </div>
             <Button
@@ -168,23 +58,17 @@ export function PortalStep({
             </Button>
           </div>
 
-          <div style={{ display: "flex", gap: 16, marginTop: 16 }}>
+          <div className="flex gap-4 mt-4">
             {PORTAL_FEATURES.map((t) => (
               <div
                 key={t}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 6,
-                  fontSize: 12,
-                  color: "var(--text-muted)",
-                }}
+                className="flex items-center gap-[6px] text-[12px] text-[var(--text-muted)]"
               >
                 <Icon
                   name="check"
                   size={13}
                   strokeWidth={2.4}
-                  style={{ color: "var(--emerald-500)" }}
+                  className="text-[var(--emerald-500)]"
                 />
                 {t}
               </div>

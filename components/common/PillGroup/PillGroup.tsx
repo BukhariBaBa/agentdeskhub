@@ -1,8 +1,12 @@
 "use client";
+import { cn } from "@/lib/cn";
 import { Icon } from "../Icon";
-import { TINT } from "@/lib/constants";
 import type { PillGroupProps } from "./PillGroup.types";
-import { PILL_BASE_STYLE } from "./PillGroup.const";
+import {
+  PILL_BASE_CLASS,
+  PILL_OFF_CLASS,
+  PILL_ON_CLASSES,
+} from "./PillGroup.const";
 
 export function PillGroup({
   options,
@@ -10,8 +14,6 @@ export function PillGroup({
   onChange,
   tint = "indigo",
 }: PillGroupProps) {
-  const t = TINT[tint];
-
   const toggle = (option: string) => {
     onChange(
       value.includes(option)
@@ -21,7 +23,7 @@ export function PillGroup({
   };
 
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+    <div className="flex flex-wrap gap-2">
       {options.map((o) => {
         const on = value.includes(o);
         return (
@@ -29,12 +31,10 @@ export function PillGroup({
             key={o}
             type="button"
             onClick={() => toggle(o)}
-            style={{
-              ...PILL_BASE_STYLE,
-              background: on ? t.bg : "#fff",
-              color: on ? t.fg : "var(--text-muted)",
-              border: `1px solid ${on ? t.br : "var(--border-strong)"}`,
-            }}
+            className={cn(
+              PILL_BASE_CLASS,
+              on ? PILL_ON_CLASSES[tint] : PILL_OFF_CLASS,
+            )}
           >
             {on && <Icon name="check" size={13} strokeWidth={2.4} />}
             {o}

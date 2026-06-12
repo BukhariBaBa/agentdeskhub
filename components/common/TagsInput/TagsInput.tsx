@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Icon } from "../Icon";
 import type { TagsInputProps } from "./TagsInput.types";
-import { TAG_STYLE } from "./TagsInput.const";
+import { TAG_CLASS } from "./TagsInput.const";
 
 export function TagsInput({ tags, onChange, placeholder }: TagsInputProps) {
   const [draft, setDraft] = useState("");
@@ -23,32 +23,14 @@ export function TagsInput({ tags, onChange, placeholder }: TagsInputProps) {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: 7,
-        alignItems: "center",
-        padding: "7px 9px",
-        border: "1px solid var(--border-strong)",
-        borderRadius: "var(--r-md)",
-        background: "#fff",
-      }}
-    >
+    <div className="flex flex-wrap gap-[7px] items-center px-[9px] py-[7px] border border-[var(--border-strong)] rounded-[var(--r-md)] bg-white">
       {tags.map((t) => (
-        <span key={t} style={TAG_STYLE}>
+        <span key={t} className={TAG_CLASS}>
           {t}
           <button
             type="button"
             onClick={() => onChange(tags.filter((x) => x !== t))}
-            style={{
-              display: "inline-flex",
-              border: "none",
-              background: "none",
-              color: "var(--indigo-600)",
-              cursor: "pointer",
-              padding: 0,
-            }}
+            className="inline-flex border-none bg-transparent text-[var(--indigo-600)] cursor-pointer p-0"
           >
             <Icon name="x" size={12} strokeWidth={2.4} />
           </button>
@@ -60,16 +42,7 @@ export function TagsInput({ tags, onChange, placeholder }: TagsInputProps) {
         onChange={(e) => setDraft(e.target.value)}
         onKeyDown={handleKeyDown}
         onBlur={add}
-        style={{
-          flex: 1,
-          minWidth: 100,
-          border: "none",
-          outline: "none",
-          fontSize: 13,
-          padding: "4px 2px",
-          background: "transparent",
-          color: "var(--text)",
-        }}
+        className="flex-1 min-w-[100px] border-none outline-none text-[13px] py-[4px] px-[2px] bg-transparent text-[var(--text)]"
       />
     </div>
   );

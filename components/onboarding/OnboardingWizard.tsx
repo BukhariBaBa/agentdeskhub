@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/cn";
 import { useOnboarding } from "@/hooks/useOnboarding";
 import { Logo } from "@/components/common/Icon";
 import { Button } from "@/components/common/Button";
@@ -104,109 +105,57 @@ export function OnboardingWizard() {
   const isLastStep = ob.step === ONBOARDING_STEPS.length - 1;
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 400,
-        background: "var(--bg-subtle)",
-        display: "flex",
-        flexDirection: "column",
-        overflow: "hidden",
-      }}
-    >
+    <div className="fixed inset-0 z-[400] bg-[var(--bg-subtle)] flex flex-col overflow-hidden">
       {/* Top bar */}
-      <div
-        style={{
-          flexShrink: 0,
-          padding: "20px 28px 0",
-          maxWidth: 960,
-          width: "100%",
-          margin: "0 auto",
-          boxSizing: "border-box",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginBottom: 16,
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: 9 }}>
+      <div className="shrink-0 pt-5 px-7 max-w-[960px] w-full mx-auto box-border">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-[9px]">
             <Logo size={26} />
-            <span
-              style={{
-                fontWeight: 650,
-                fontSize: 15,
-                letterSpacing: "-0.02em",
-                color: "var(--text)",
-              }}
-            >
+            <span className="font-[650] text-[15px] tracking-[-0.02em] text-[var(--text)]">
               AgentDesk
             </span>
           </div>
           <button
             onClick={ob.finish}
-            style={{
-              background: "none",
-              border: "none",
-              color: "var(--text-subtle)",
-              fontSize: 12.5,
-              fontWeight: 500,
-              cursor: "pointer",
-            }}
+            className="bg-transparent border-none text-[var(--text-subtle)] text-[12.5px] font-medium cursor-pointer"
           >
             Skip setup
           </button>
         </div>
 
         {/* Progress bar segments */}
-        <div style={{ display: "flex", gap: 6 }}>
+        <div className="flex gap-[6px]">
           {ONBOARDING_STEPS.map((s, i) => (
             <div
               key={s.id}
-              style={{
-                flex: 1,
-                height: 4,
-                borderRadius: 99,
-                background:
-                  i <= ob.step ? "var(--indigo-600)" : "var(--zinc-200)",
-                transition: "background .3s",
-              }}
+              className={cn(
+                "flex-1 h-[4px] rounded-full transition-[background] duration-300",
+                i <= ob.step
+                  ? "bg-[var(--indigo-600)]"
+                  : "bg-[var(--zinc-200)]",
+              )}
             />
           ))}
         </div>
 
         {/* Step labels */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: 8,
-          }}
-        >
+        <div className="flex justify-between mt-2">
           {ONBOARDING_STEPS.map((s, i) => (
             <span
               key={s.id}
-              style={{
-                fontSize: 11,
-                fontWeight: i === ob.step ? 650 : 500,
-                color:
-                  i === ob.step
-                    ? "var(--indigo-600)"
-                    : i < ob.step
-                      ? "var(--text-muted)"
-                      : "var(--text-subtle)",
-                flex: 1,
-                textAlign:
-                  i === 0
-                    ? "left"
-                    : i === ONBOARDING_STEPS.length - 1
-                      ? "right"
-                      : "center",
-              }}
+              className={cn(
+                "text-[11px] flex-1",
+                i === 0
+                  ? "text-left"
+                  : i === ONBOARDING_STEPS.length - 1
+                    ? "text-right"
+                    : "text-center",
+                i === ob.step
+                  ? "font-[650] text-[var(--indigo-600)]"
+                  : i < ob.step
+                    ? "font-medium text-[var(--text-muted)]"
+                    : "font-medium text-[var(--text-subtle)]",
+              )}
             >
               {s.label}
             </span>
@@ -215,36 +164,13 @@ export function OnboardingWizard() {
       </div>
 
       {/* Scrollable step body */}
-      <div
-        style={{
-          flex: 1,
-          overflowY: "auto",
-          padding: "40px 28px 28px",
-          width: "100%",
-        }}
-      >
+      <div className="flex-1 overflow-y-auto pt-10 px-7 pb-7 w-full">
         {renderStep()}
       </div>
 
       {/* Footer nav */}
-      <div
-        style={{
-          flexShrink: 0,
-          borderTop: "1px solid var(--border)",
-          background: "#fff",
-          padding: "14px 28px",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 720,
-            margin: "0 auto",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 12,
-          }}
-        >
+      <div className="shrink-0 border-t border-[var(--border)] bg-white px-7 py-[14px]">
+        <div className="max-w-[720px] mx-auto flex items-center justify-between gap-3">
           {ob.step > STEP_INDEX.WORKSPACE ? (
             <Button variant="ghost" icon="chevronLeft" onClick={ob.back}>
               Back
@@ -253,7 +179,7 @@ export function OnboardingWizard() {
             <span />
           )}
 
-          <div style={{ display: "flex", gap: 8 }}>
+          <div className="flex gap-2">
             {ob.canSkip && (
               <Button
                 variant="ghost"

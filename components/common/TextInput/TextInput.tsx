@@ -1,5 +1,6 @@
+import { cn } from "@/lib/cn";
 import type { TextInputProps } from "./TextInput.types";
-import { TEXT_INPUT_BASE_STYLE } from "./TextInput.const";
+import { TEXT_INPUT_BASE_CLASS } from "./TextInput.const";
 
 export function TextInput({
   value,
@@ -13,23 +14,13 @@ export function TextInput({
 }: TextInputProps) {
   return (
     <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        border: "1px solid var(--border-strong)",
-        borderRadius: "var(--r-md)",
-        background: disabled ? "var(--bg-subtle)" : "#fff",
-        overflow: "hidden",
-      }}
+      className={cn(
+        "flex items-center border border-[var(--border-strong)] rounded-[var(--r-md)] overflow-hidden",
+        disabled ? "bg-[var(--bg-subtle)]" : "bg-white",
+      )}
     >
       {prefix && (
-        <span
-          style={{
-            padding: "0 0 0 12px",
-            color: "var(--text-subtle)",
-            fontSize: 13.5,
-          }}
-        >
+        <span className="pl-3 text-[var(--text-subtle)] text-[13.5px]">
           {prefix}
         </span>
       )}
@@ -39,20 +30,14 @@ export function TextInput({
         placeholder={placeholder}
         disabled={disabled}
         onChange={(e) => onChange(e.target.value)}
-        style={{
-          ...TEXT_INPUT_BASE_STYLE,
-          fontFamily: mono ? "var(--mono)" : "inherit",
-          cursor: disabled ? "not-allowed" : "text",
-        }}
+        className={cn(
+          TEXT_INPUT_BASE_CLASS,
+          mono && "font-[var(--mono)]",
+          disabled ? "cursor-not-allowed" : "cursor-text",
+        )}
       />
       {suffix && (
-        <span
-          style={{
-            padding: "0 12px 0 0",
-            color: "var(--text-subtle)",
-            fontSize: 13,
-          }}
-        >
+        <span className="pr-3 text-[var(--text-subtle)] text-[13px]">
           {suffix}
         </span>
       )}

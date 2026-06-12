@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/cn";
 import type { GoogleButtonProps } from "./GoogleButton.types";
 import { GOOGLE_BUTTON_LABEL } from "./GoogleButton.const";
 
@@ -27,18 +28,7 @@ function GoogleIcon() {
 
 function ButtonSpinner() {
   return (
-    <span
-      style={{
-        width: 16,
-        height: 16,
-        borderRadius: "50%",
-        border: "2px solid var(--border-strong)",
-        borderTopColor: "var(--text-muted)",
-        animation: "ad-spin .7s linear infinite",
-        display: "inline-block",
-        flexShrink: 0,
-      }}
-    />
+    <span className="w-4 h-4 rounded-full border-2 border-[var(--border-strong)] border-t-[var(--text-muted)] animate-[ad-spin_.7s_linear_infinite] inline-block shrink-0" />
   );
 }
 
@@ -48,25 +38,12 @@ export function GoogleButton({ onClick, loading }: GoogleButtonProps) {
       type="button"
       onClick={loading ? undefined : onClick}
       disabled={loading}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 9,
-        width: "100%",
-        minHeight: 42,
-        padding: "0 16px",
-        fontSize: 14,
-        fontWeight: 550,
-        letterSpacing: "-0.01em",
-        borderRadius: "var(--r-md)",
-        border: "1px solid var(--border-strong)",
-        background: loading ? "var(--bg-subtle)" : "#fff",
-        color: "var(--text)",
-        cursor: loading ? "not-allowed" : "pointer",
-        transition: "background .12s, border-color .12s",
-        opacity: loading ? 0.6 : 1,
-      }}
+      className={cn(
+        "flex items-center justify-center gap-[9px] w-full min-h-[42px] px-4 text-[14px] font-[550] tracking-[-0.01em] rounded-[var(--r-md)] border border-[var(--border-strong)] text-[var(--text)] transition-[background,border-color] duration-[120ms]",
+        loading
+          ? "bg-[var(--bg-subtle)] cursor-not-allowed opacity-60"
+          : "bg-white cursor-pointer",
+      )}
     >
       {loading ? <ButtonSpinner /> : <GoogleIcon />}
       {GOOGLE_BUTTON_LABEL}

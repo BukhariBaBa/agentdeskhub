@@ -1,14 +1,14 @@
 import { Icon } from "../Icon";
 import type { SelectProps } from "./Select.types";
-import { SELECT_STYLE } from "./Select.const";
+import { SELECT_CLASS } from "./Select.const";
 
 export function Select({ value, onChange, options }: SelectProps) {
   return (
-    <div style={{ position: "relative" }}>
+    <div className="relative">
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        style={SELECT_STYLE}
+        className={SELECT_CLASS}
       >
         {options.map((o) => (
           <option key={o} value={o}>
@@ -19,14 +19,7 @@ export function Select({ value, onChange, options }: SelectProps) {
       <Icon
         name="chevronDown"
         size={15}
-        style={{
-          position: "absolute",
-          right: 11,
-          top: "50%",
-          transform: "translateY(-50%)",
-          color: "var(--zinc-400)",
-          pointerEvents: "none",
-        }}
+        className="absolute right-[11px] top-1/2 -translate-y-1/2 text-[var(--zinc-400)] pointer-events-none"
       />
     </div>
   );

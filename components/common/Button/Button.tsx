@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
+import { cn } from "@/lib/cn";
 import { Icon } from "../Icon";
 import type { ButtonProps } from "./Button.types";
-import { BUTTON_SIZES, BUTTON_VARIANTS } from "./Button.const";
+import { BUTTON_SIZE_CLASSES, BUTTON_VARIANT_CLASSES } from "./Button.const";
 
 export function Button({
   children,
@@ -14,11 +14,8 @@ export function Button({
   disabled = false,
   full = false,
   type = "button",
-  style = {},
+  className,
 }: ButtonProps) {
-  const [hover, setHover] = useState(false);
-  const s = BUTTON_SIZES[size];
-  const v = BUTTON_VARIANTS[variant];
   const iconSize = size === "sm" ? 14 : 16;
 
   return (
@@ -26,29 +23,13 @@ export function Button({
       type={type}
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: s.gap,
-        padding: s.padding,
-        minHeight: s.h,
-        fontSize: s.fontSize,
-        fontWeight: 550,
-        borderRadius: "var(--r-md)",
-        cursor: disabled ? "not-allowed" : "pointer",
-        width: full ? "100%" : "auto",
-        whiteSpace: "nowrap",
-        letterSpacing: "-0.01em",
-        transition: "background .12s, border-color .12s, opacity .12s",
-        opacity: disabled ? 0.5 : 1,
-        background: hover ? v.hoverBg : v.bg,
-        color: v.color,
-        border: hover ? v.hoverBorder : v.border,
-        ...style,
-      }}
+      className={cn(
+        "inline-flex items-center justify-center whitespace-nowrap tracking-[-0.01em] font-[550] rounded-[var(--r-md)] cursor-pointer transition-[background,border-color,opacity] duration-[120ms] disabled:opacity-50 disabled:cursor-not-allowed",
+        BUTTON_SIZE_CLASSES[size],
+        BUTTON_VARIANT_CLASSES[variant],
+        full && "w-full",
+        className,
+      )}
     >
       {icon && <Icon name={icon} size={iconSize} strokeWidth={2} />}
       {children}

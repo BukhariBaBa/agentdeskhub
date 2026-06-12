@@ -1,12 +1,2 @@
-export const SELECT_STYLE = {
-  width: "100%",
-  padding: "9px 34px 9px 12px",
-  border: "1px solid var(--border-strong)",
-  borderRadius: "var(--r-md)",
-  fontSize: 13.5,
-  color: "var(--text)",
-  outline: "none",
-  appearance: "none" as const,
-  background: "#fff",
-  cursor: "pointer",
-} as const;
+export const SELECT_CLASS =
+  "w-full py-[9px] pr-[34px] pl-3 border border-[var(--border-strong)] rounded-[var(--r-md)] text-[13.5px] text-[var(--text)] outline-none appearance-none bg-white cursor-pointer";

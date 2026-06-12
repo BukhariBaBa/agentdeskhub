@@ -18,7 +18,7 @@ import {
   AI_STEP_EYEBROW,
   AI_STEP_TITLE,
   AI_STEP_SUB,
-  CARD_STYLE,
+  CARD_CLASS,
 } from "./AIProfileStep.const";
 
 function SubHead({
@@ -31,40 +31,14 @@ function SubHead({
   desc?: string;
 }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: 11,
-        marginBottom: 16,
-        alignItems: "flex-start",
-      }}
-    >
-      <span
-        style={{
-          width: 30,
-          height: 30,
-          borderRadius: "var(--r-md)",
-          background: "var(--indigo-50)",
-          color: "var(--indigo-600)",
-          display: "inline-flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexShrink: 0,
-          marginTop: 1,
-        }}
-      >
+    <div className="flex gap-[11px] mb-4 items-start">
+      <span className="w-[30px] h-[30px] rounded-[var(--r-md)] bg-[var(--indigo-50)] text-[var(--indigo-600)] inline-flex items-center justify-center shrink-0 mt-[1px]">
         <Icon name={icon} size={16} strokeWidth={1.9} />
       </span>
       <div>
-        <div
-          style={{ fontSize: 14, fontWeight: 650, letterSpacing: "-0.01em" }}
-        >
-          {title}
-        </div>
+        <div className="text-[14px] font-[650] tracking-[-0.01em]">{title}</div>
         {desc && (
-          <div
-            style={{ fontSize: 12.5, color: "var(--text-muted)", marginTop: 2 }}
-          >
+          <div className="text-[12.5px] text-[var(--text-muted)] mt-[2px]">
             {desc}
           </div>
         )}
@@ -89,51 +63,26 @@ export function AIProfileStep({
   };
 
   return (
-    <div style={{ width: "100%", maxWidth: 720, margin: "0 auto" }}>
-      <div
-        style={{
-          fontSize: 12,
-          fontWeight: 650,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          color: "var(--indigo-600)",
-          marginBottom: 10,
-        }}
-      >
+    <div className="w-full max-w-[720px] mx-auto">
+      <div className="text-[12px] font-[650] tracking-[0.08em] uppercase text-[var(--indigo-600)] mb-[10px]">
         {AI_STEP_EYEBROW}
       </div>
-      <h1
-        style={{
-          margin: 0,
-          fontSize: 27,
-          fontWeight: 680,
-          letterSpacing: "-0.03em",
-          color: "var(--text)",
-        }}
-      >
+      <h1 className="m-0 text-[27px] font-[680] tracking-[-0.03em] text-[var(--text)]">
         {AI_STEP_TITLE}
       </h1>
-      <p
-        style={{
-          margin: "9px 0 26px",
-          fontSize: 14.5,
-          color: "var(--text-muted)",
-          lineHeight: 1.55,
-          maxWidth: 600,
-        }}
-      >
+      <p className="mt-[9px] mb-[26px] text-[14.5px] text-[var(--text-muted)] leading-[1.55] max-w-[600px]">
         {AI_STEP_SUB}
       </p>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      <div className="flex flex-col gap-4">
         {/* Skills & Niche */}
-        <div style={CARD_STYLE}>
+        <div className={CARD_CLASS}>
           <SubHead
             icon="sparkle"
             title="Skills & niche"
             desc="Lead Scout uses this to score how well a lead fits you."
           />
-          <div style={{ marginBottom: 16 }}>
+          <div className="mb-4">
             <FieldLabel>Primary skill</FieldLabel>
             <Select
               value={aiProfile.primarySkill}
@@ -141,7 +90,7 @@ export function AIProfileStep({
               options={SKILLS}
             />
           </div>
-          <div style={{ marginBottom: 18 }}>
+          <div className="mb-[18px]">
             <FieldLabel hint="press Enter">Specializations</FieldLabel>
             <TagsInput
               tags={aiProfile.specializations}
@@ -153,9 +102,7 @@ export function AIProfileStep({
               }
             />
           </div>
-          <div
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}
-          >
+          <div className="grid grid-cols-2 gap-4">
             <div>
               <FieldLabel>Industries I love</FieldLabel>
               <PillGroup
@@ -178,15 +125,13 @@ export function AIProfileStep({
         </div>
 
         {/* Rates & Preferences */}
-        <div style={CARD_STYLE}>
+        <div className={CARD_CLASS}>
           <SubHead
             icon="dollar"
             title="Rates & preferences"
             desc="Proposal Agent prices and scopes inside these guardrails."
           />
-          <div
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}
-          >
+          <div className="grid grid-cols-2 gap-4">
             <div>
               <FieldLabel>Minimum project budget</FieldLabel>
               <TextInput
@@ -211,14 +156,7 @@ export function AIProfileStep({
               />
             </div>
           </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 16,
-              marginTop: 16,
-            }}
-          >
+          <div className="grid grid-cols-2 gap-4 mt-4">
             <div>
               <FieldLabel>Preferred project length</FieldLabel>
               <Select
@@ -239,7 +177,7 @@ export function AIProfileStep({
         </div>
 
         {/* Past work & voice */}
-        <div style={CARD_STYLE}>
+        <div className={CARD_CLASS}>
           <SubHead
             icon="penTool"
             title="Past work & voice"
@@ -250,30 +188,18 @@ export function AIProfileStep({
             onChange={(e) => onChangeAi({ pastWork: e.target.value })}
             rows={6}
             placeholder="Paste your best proposal or a project description…"
-            style={{
-              width: "100%",
-              padding: "11px 13px",
-              border: "1px solid var(--border-strong)",
-              borderRadius: "var(--r-md)",
-              fontSize: 13.5,
-              lineHeight: 1.6,
-              color: "var(--text)",
-              outline: "none",
-              resize: "vertical",
-              boxSizing: "border-box",
-              fontFamily: "inherit",
-            }}
+            className="w-full px-[13px] py-[11px] border border-[var(--border-strong)] rounded-[var(--r-md)] text-[13.5px] leading-[1.6] text-[var(--text)] outline-none resize-y box-border font-[inherit]"
           />
         </div>
 
         {/* Red flags */}
-        <div style={CARD_STYLE}>
+        <div className={CARD_CLASS}>
           <SubHead
             icon="alert"
             title="Red flags"
             desc="Teach Lead Scout the kinds of leads to flag or skip."
           />
-          <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+          <div className="flex flex-col gap-[7px]">
             {aiProfile.redFlags.map((f) => (
               <RedFlagRow
                 key={f.id}

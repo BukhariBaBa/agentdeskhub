@@ -1,3 +1,4 @@
+import { cn } from "@/lib/cn";
 import type { IconProps, LogoProps } from "./Icon.types";
 import { ICON_PATHS } from "./Icon.const";
 
@@ -6,7 +7,6 @@ export function Icon({
   size = 18,
   strokeWidth = 1.8,
   className = "",
-  style = {},
 }: IconProps) {
   const path = ICON_PATHS[name];
   return (
@@ -19,8 +19,7 @@ export function Icon({
       strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={className}
-      style={{ flexShrink: 0, ...style }}
+      className={cn("shrink-0", className)}
       dangerouslySetInnerHTML={{ __html: path }}
     />
   );

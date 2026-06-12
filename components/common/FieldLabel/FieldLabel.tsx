@@ -1,18 +1,13 @@
+import { cn } from "@/lib/cn";
 import type { FieldLabelProps } from "./FieldLabel.types";
-import { FIELD_LABEL_STYLE } from "./FieldLabel.const";
+import { FIELD_LABEL_CLASS } from "./FieldLabel.const";
 
 export function FieldLabel({ children, hint }: FieldLabelProps) {
   return (
-    <label style={FIELD_LABEL_STYLE}>
+    <label className={FIELD_LABEL_CLASS}>
       {children}
       {hint && (
-        <span
-          style={{
-            fontWeight: 400,
-            color: "var(--text-subtle)",
-            marginLeft: 6,
-          }}
-        >
+        <span className={cn("font-normal text-[var(--text-subtle)] ml-[6px]")}>
           {hint}
         </span>
       )}

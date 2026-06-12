@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
+import { cn } from "@/lib/cn";
 import { Icon } from "../Icon";
-import { TEXT_INPUT_BASE_STYLE } from "../TextInput/TextInput.const";
+import { TEXT_INPUT_BASE_CLASS } from "../TextInput/TextInput.const";
 import type { PasswordInputProps } from "./PasswordInput.types";
 import { PASSWORD_INPUT_DEFAULT_PLACEHOLDER } from "./PasswordInput.const";
 
@@ -15,14 +16,10 @@ export function PasswordInput({
 
   return (
     <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        border: "1px solid var(--border-strong)",
-        borderRadius: "var(--r-md)",
-        background: disabled ? "var(--bg-subtle)" : "#fff",
-        overflow: "hidden",
-      }}
+      className={cn(
+        "flex items-center border border-[var(--border-strong)] rounded-[var(--r-md)] overflow-hidden",
+        disabled ? "bg-[var(--bg-subtle)]" : "bg-white",
+      )}
     >
       <input
         value={value}
@@ -30,24 +27,15 @@ export function PasswordInput({
         placeholder={placeholder}
         disabled={disabled}
         onChange={(e) => onChange(e.target.value)}
-        style={{
-          ...TEXT_INPUT_BASE_STYLE,
-          cursor: disabled ? "not-allowed" : "text",
-        }}
+        className={cn(
+          TEXT_INPUT_BASE_CLASS,
+          disabled ? "cursor-not-allowed" : "cursor-text",
+        )}
       />
       <button
         type="button"
         onClick={() => setShow((s) => !s)}
-        style={{
-          padding: "0 12px",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-          color: "var(--text-subtle)",
-          display: "flex",
-          alignItems: "center",
-          flexShrink: 0,
-        }}
+        className="px-3 bg-transparent border-none cursor-pointer text-[var(--text-subtle)] flex items-center shrink-0"
       >
         <Icon name={show ? "eyeOff" : "eye"} size={16} strokeWidth={1.8} />
       </button>

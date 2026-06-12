@@ -12,96 +12,41 @@ const CONFETTI_BITS = Array.from({ length: 28 }, (_, i) => ({
 }));
 
 function Confetti() {
+  const dynamicStyles = CONFETTI_BITS.map(
+    (b, i) =>
+      `.cf${i}{left:${b.left}%;background:${b.col};transform:rotate(${b.rot}deg);animation:ad-confetti ${b.dur}s ${b.delay}s cubic-bezier(.3,.6,.5,1) forwards}`,
+  ).join("");
+
   return (
-    <div
-      style={{
-        position: "absolute",
-        inset: 0,
-        overflow: "hidden",
-        pointerEvents: "none",
-      }}
-    >
-      {CONFETTI_BITS.map((b, i) => (
-        <span
-          key={i}
-          style={{
-            position: "absolute",
-            top: "-6%",
-            left: `${b.left}%`,
-            width: 8,
-            height: 12,
-            background: b.col,
-            borderRadius: 2,
-            transform: `rotate(${b.rot}deg)`,
-            animation: `ad-confetti ${b.dur}s ${b.delay}s cubic-bezier(.3,.6,.5,1) forwards`,
-            opacity: 0.9,
-          }}
-        />
-      ))}
-    </div>
+    <>
+      <style>{dynamicStyles}</style>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {CONFETTI_BITS.map((_, i) => (
+          <span
+            key={i}
+            className={`cf${i} absolute top-[-6%] w-2 h-3 rounded-[2px] opacity-90`}
+          />
+        ))}
+      </div>
+    </>
   );
 }
 
 export function DoneScreen({ onFinish }: DoneScreenProps) {
   return (
-    <div
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 401,
-        background: "var(--bg-subtle)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 28,
-        overflow: "hidden",
-      }}
-    >
+    <div className="fixed inset-0 z-[401] bg-[var(--bg-subtle)] flex items-center justify-center p-7 overflow-hidden">
       <Confetti />
-      <div
-        style={{
-          textAlign: "center",
-          maxWidth: 460,
-          margin: "0 auto",
-          position: "relative",
-        }}
-      >
-        <div
-          style={{
-            width: 76,
-            height: 76,
-            borderRadius: 99,
-            background: "var(--emerald-50)",
-            color: "var(--emerald-600)",
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            margin: "0 auto 24px",
-          }}
-        >
+      <div className="text-center max-w-[460px] mx-auto relative">
+        <div className="w-[76px] h-[76px] rounded-full bg-[var(--emerald-50)] text-[var(--emerald-600)] inline-flex items-center justify-center mx-auto mb-6">
           <Icon name="check" size={38} strokeWidth={2.6} />
         </div>
-        <h1
-          style={{
-            margin: 0,
-            fontSize: 28,
-            fontWeight: 680,
-            letterSpacing: "-0.03em",
-          }}
-        >
+        <h1 className="m-0 text-[28px] font-[680] tracking-[-0.03em]">
           {DONE_TITLE}
         </h1>
-        <p
-          style={{
-            margin: "12px 0 28px",
-            fontSize: 15,
-            color: "var(--text-muted)",
-            lineHeight: 1.55,
-          }}
-        >
+        <p className="mt-3 mb-7 text-[15px] text-[var(--text-muted)] leading-[1.55]">
           {DONE_BODY}
         </p>
-        <div style={{ display: "inline-flex" }}>
+        <div className="inline-flex">
           <Button
             variant="primary"
             size="lg"

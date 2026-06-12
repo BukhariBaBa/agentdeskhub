@@ -21,42 +21,19 @@ import {
 
 function Divider() {
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: 12,
-        margin: "18px 0",
-      }}
-    >
-      <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
-      <span
-        style={{
-          fontSize: 12,
-          color: "var(--text-subtle)",
-          fontWeight: 500,
-        }}
-      >
+    <div className="flex items-center gap-3 my-[18px]">
+      <div className="flex-1 h-px bg-[var(--border)]" />
+      <span className="text-[12px] text-[var(--text-subtle)] font-medium">
         or
       </span>
-      <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
+      <div className="flex-1 h-px bg-[var(--border)]" />
     </div>
   );
 }
 
 function PrimarySpinner() {
   return (
-    <span
-      style={{
-        width: 16,
-        height: 16,
-        borderRadius: "50%",
-        border: "2px solid rgba(255,255,255,0.35)",
-        borderTopColor: "#fff",
-        animation: "ad-spin .7s linear infinite",
-        display: "inline-block",
-      }}
-    />
+    <span className="w-4 h-4 rounded-full border-2 border-white/35 border-t-white animate-[ad-spin_.7s_linear_infinite] inline-block" />
   );
 }
 
@@ -77,7 +54,7 @@ export function SignupForm() {
 
   return (
     <AuthCard title={SIGNUP_TITLE} subtitle={SIGNUP_SUBTITLE}>
-      <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+      <div className="flex flex-col gap-[14px]">
         <div>
           <FieldLabel>{SIGNUP_FULLNAME_LABEL}</FieldLabel>
           <TextInput
@@ -109,16 +86,7 @@ export function SignupForm() {
         </div>
 
         {error && (
-          <div
-            style={{
-              padding: "10px 13px",
-              borderRadius: "var(--r-md)",
-              background: "var(--rose-50)",
-              color: "var(--rose-600)",
-              fontSize: 13,
-              border: "1px solid var(--rose-100)",
-            }}
-          >
+          <div className="px-[13px] py-[10px] rounded-[var(--r-md)] bg-[var(--rose-50)] text-[var(--rose-600)] text-[13px] border border-[var(--rose-100)]">
             {error}
           </div>
         )}
@@ -138,22 +106,11 @@ export function SignupForm() {
 
         <GoogleButton onClick={googleSignIn} loading={loading} />
 
-        <p
-          style={{
-            textAlign: "center",
-            fontSize: 13,
-            color: "var(--text-muted)",
-            margin: "8px 0 0",
-          }}
-        >
+        <p className="text-center text-[13px] text-[var(--text-muted)] mt-2 mb-0">
           {SIGNUP_SWITCH_PRE}{" "}
           <Link
             href={ROUTES.LOGIN}
-            style={{
-              color: "var(--indigo-600)",
-              fontWeight: 550,
-              textDecoration: "none",
-            }}
+            className="text-[var(--indigo-600)] font-[550] no-underline"
           >
             {SIGNUP_SWITCH_LINK}
           </Link>

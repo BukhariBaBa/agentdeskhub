@@ -1,47 +1,43 @@
 "use client";
+import { cn } from "@/lib/cn";
 import { Icon } from "../Icon";
 import type { RedFlagRowProps } from "./RedFlagRow.types";
-import { RED_FLAG_ROW_BASE } from "./RedFlagRow.const";
+import {
+  RED_FLAG_CHECKBOX_BASE_CLASS,
+  RED_FLAG_CHECKBOX_OFF_CLASS,
+  RED_FLAG_CHECKBOX_ON_CLASS,
+  RED_FLAG_ROW_BASE_CLASS,
+  RED_FLAG_ROW_OFF_CLASS,
+  RED_FLAG_ROW_ON_CLASS,
+} from "./RedFlagRow.const";
 
 export function RedFlagRow({ flag, onToggle }: RedFlagRowProps) {
   return (
     <button
       type="button"
       onClick={onToggle}
-      style={{
-        ...RED_FLAG_ROW_BASE,
-        background: flag.on ? "var(--rose-50)" : "#fff",
-        border: `1px solid ${flag.on ? "var(--rose-100)" : "var(--border)"}`,
-      }}
+      className={cn(
+        RED_FLAG_ROW_BASE_CLASS,
+        flag.on ? RED_FLAG_ROW_ON_CLASS : RED_FLAG_ROW_OFF_CLASS,
+      )}
     >
       <span
-        style={{
-          width: 18,
-          height: 18,
-          borderRadius: 5,
-          flexShrink: 0,
-          display: "inline-flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: flag.on ? "var(--rose-500)" : "#fff",
-          border: `1px solid ${flag.on ? "var(--rose-500)" : "var(--border-strong)"}`,
-        }}
+        className={cn(
+          RED_FLAG_CHECKBOX_BASE_CLASS,
+          flag.on ? RED_FLAG_CHECKBOX_ON_CLASS : RED_FLAG_CHECKBOX_OFF_CLASS,
+        )}
       >
         {flag.on && (
-          <Icon
-            name="check"
-            size={12}
-            strokeWidth={3}
-            style={{ color: "#fff" }}
-          />
+          <Icon name="check" size={12} strokeWidth={3} className="text-white" />
         )}
       </span>
       <span
-        style={{
-          fontSize: 13,
-          color: flag.on ? "var(--rose-700)" : "var(--text-muted)",
-          fontWeight: flag.on ? 550 : 450,
-        }}
+        className={cn(
+          "text-[13px]",
+          flag.on
+            ? "text-[var(--rose-700)] font-[550]"
+            : "text-[var(--text-muted)] font-[450]",
+        )}
       >
         {flag.label}
       </span>
