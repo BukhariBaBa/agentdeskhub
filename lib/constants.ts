@@ -3,6 +3,49 @@ export const ROUTES = {
   SIGNUP: "/signup",
   ONBOARDING: "/onboarding",
   DASHBOARD: "/dashboard",
+  CLIENTS: "/clients",
+  PROPOSALS: "/proposals",
+  PROJECTS: "/projects",
+  INVOICES: "/invoices",
+  AGENTS: "/agents",
+  INTEGRATIONS: "/integrations",
+  SETTINGS: "/settings",
+} as const;
+
+export const CLIENT_STATUS = {
+  LEAD: "Lead",
+  ACTIVE: "Active",
+  PAST: "Past",
+  LOST: "Lost",
+} as const;
+
+export const PROPOSAL_STATUS = {
+  DRAFT: "Draft",
+  SENT: "Sent",
+  ACCEPTED: "Accepted",
+  REJECTED: "Rejected",
+  EXPIRED: "Expired",
+} as const;
+
+export const PROJECT_STATUS = {
+  ACTIVE: "Active",
+  PAUSED: "Paused",
+  COMPLETE: "Complete",
+} as const;
+
+export const INVOICE_STATUS = {
+  DRAFT: "Draft",
+  SENT: "Sent",
+  PAID: "Paid",
+  OVERDUE: "Overdue",
+} as const;
+
+export const AGENT_STATUS = {
+  PENDING: "pending",
+  RUNNING: "running",
+  AWAITING_APPROVAL: "awaiting_approval",
+  DONE: "done",
+  FAILED: "failed",
 } as const;
 
 export const ONBOARDING_STEP_ID = {
